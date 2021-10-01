@@ -19,7 +19,7 @@
         </div>
         
         <main>
-            <div class="photographeInfo" id="photographeInfo">
+            <div class="photographeInfo" id="photographeInfo" role="region" aria-label="photographer profil">
                 <div class="photographeInfo__details">
                     <h1>Mimi Keel</h1>
                     <p class="countryCity">London,UK</p>
@@ -31,14 +31,22 @@
                 <button class="modal-btn">Contactez-moi</button>
                 <img  class="portrait" src="images/photo_choisie_des_photographes/MimiKeel.jpg" alt="">
             </div> 
-            <div class="menu">
-                <span id="tri_elem">trié par</span>
-                <select name="Order by" id="OrderBy" aria-labelledby="trié par">
-                    <option disabled hidden selected>Popularité</option>
-                    <option>Date</option>
-                    <option>Titre</option>
-                </select>
-            </div>
+            <section class="filter" aria-label="filter media">
+                <div class="filter__dropdown">
+                    <label for="OrderBy" class="filter__label">trié par</label>
+                    <div class="filter__selection">
+                        <input name="filtermedia" id="OrderBy" class="filter__selecter" type="button" value="Populatité" role="button" aria-haspopup="listbox">
+                        <span class="filter__selection__arrow"></span>
+                        <ul class="filter__selection__menu" role="listbox" aria-labelledby="OrderBy">
+                            <li role="option" class="filter__selection__option" data-value="popularity" id="popularity" tabindex="0" aria-selected="true">Popularité</li>
+                            <li role="option" class="filter__selection__option" data-value="date" id="date" tabindex="0" aria-selected="false">Date</li>
+                            <li role="option" class="filter__selection__option" data-value="title" id="title" tabindex="0" aria-selected="false">Titre</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                
+            </section>
             <div class="photos" id="photos">
                 <div class="photo" id="photo1">
                     <a href="images/Sample_Photos/243/lightboximages/Animals_Rainbow.jpg"><img src="images/Sample_Photos/243/Animals_Rainbow.jpg" alt=""></a>
