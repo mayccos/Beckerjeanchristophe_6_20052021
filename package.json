@@ -1,0 +1,24 @@
+{
+  "name": "beckerjeanchristophe_6_20052021",
+  "version": "1.0.0",
+  "description": "projet 6 formation FA",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:.public/css/style.css",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayccos/Beckerjeanchristophe_6_20052021.git"
+  },
+  "author": "jcb",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "bugs": {
+    "url": "https://github.com/mayccos/Beckerjeanchristophe_6_20052021/issues"
+  },
+  "homepage": "https://github.com/mayccos/Beckerjeanchristophe_6_20052021#readme",
+  "dependencies": {
+    "eslint": "^7.32.0"
+  }
+}

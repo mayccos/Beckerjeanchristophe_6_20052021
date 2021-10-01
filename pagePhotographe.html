@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href=".public/css/style.css">
+        <link rel="stylesheet" href="normalize.css">
+        <script src="https://kit.fontawesome.com/1a6b30f0a3.js" crossorigin="anonymous"></script>
+        <title>Projet6 FishEye</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body class="pagePhotographe">
+        <div class="header" role="banner" id="header">
+            <a  href="homepage.html" class="header-svg" aria-label="FishEye home page">
+                <img src="icones/logo.svg" alt=""/>
+            </a>
+        </div>
+        
+        <main>
+            <div class="photographeInfo" id="photographeInfo">
+                <div class="photographeInfo__details">
+                    <h1>Mimi Keel</h1>
+                    <p class="countryCity">London,UK</p>
+                    <p class="tagline">Voir le beau dans le quotidien</p>
+                    <ul id="Tags">
+                        
+                    </ul>
+                </div>
+                <button class="modal-btn">Contactez-moi</button>
+                <img  class="portrait" src="images/photo_choisie_des_photographes/MimiKeel.jpg" alt="">
+            </div> 
+            <div class="menu">
+                <span id="tri_elem">trié par</span>
+                <select name="Order by" id="OrderBy" aria-labelledby="trié par">
+                    <option disabled hidden selected>Popularité</option>
+                    <option>Date</option>
+                    <option>Titre</option>
+                </select>
+            </div>
+            <div class="photos" id="photos">
+                <div class="photo" id="photo1">
+                    <a href="images/Sample_Photos/243/lightboximages/Animals_Rainbow.jpg"><img src="images/Sample_Photos/243/Animals_Rainbow.jpg" alt=""></a>
+                    <div class="images-likes">
+                        <p class="nomImage">Rainbow Bird</p>
+                        <p class="likesNumber">59 <i class="fas fa-heart"aria-label="likes"></i></p>
+                    </div>
+                </div>
+                <div class="photo" id="photo2">
+                    <a href="images/Sample_Photos/243/lightboximages/Travel_Lonesome.jpg"><img src="images/Sample_Photos/243/Travel_Lonesome.jpg" alt=""></a>
+                    <div class="images-likes">
+                        <p class="nomImage">Lonesome</p>
+                        <p class="likesNumber">88 <i class="fas fa-heart"aria-label="likes"></i></p>
+                    </div>
+                </div>
+                <div class="photo" id="photo3">
+                    <a href="images/Sample_Photos/243/lightboximages/Event_SeasideWedding.jpg"><img src="images/Sample_Photos/243/Event_SeasideWedding.jpg" alt=""></a>
+                    <div class="images-likes">
+                        <p class="nomImage">Seaside Wedding</p>
+                        <p class="likesNumber">25 <i class="fas fa-heart"aria-label="likes"></i></p>
+                    </div>
+                </div>
+                <div class="photo" id="photo4">
+                    <a href="images/Sample_Photos/243/lightboximages/Portrait_Background.jpg"><img src="images/Sample_Photos/243/Portrait_Background.jpg" alt=""></a>
+                    <div class="images-likes">
+                        <p class="nomImage">Raw Black Portrait</p>
+                        <p class="likesNumber">55 <i class="fas fa-heart"aria-label="likes"></i></p>
+                    </div>
+                </div>
+                <div class="photo" id="photo5">
+                    <a href="images/Sample_Photos/243/lightboximages/Event_PintoWedding.jpg"><img src="images/Sample_Photos/243/Event_PintoWedding.jpg" alt=""></a>
+                    <div class="images-likes">
+                        <p class="nomImage">Boulder Wedding</p>
+                        <p class="likesNumber">52 <i class="fas fa-heart"aria-label="likes"></i></p>
+                    </div>
+                </div>
+                <div class="photo" id="photo6">
+                    <a href="images/Sample_Photos/243/lightboximages/Portrait_Wednesday.jpg"><img src="images/Sample_Photos/243/Portrait_Wednesday.jpg" alt=""></a>
+                    <div class="images-likes">
+                        <p class="nomImage">Wednesday Potrait</p>
+                        <p class="likesNumber">34 <i class="fas fa-heart"aria-label="likes"></i></p>
+                    </div>
+                </div>
+                <div class="photo" id="photo7">
+                    <a href="images/Sample_Photos/243/lightboximages/Portrait_Nora.jpg"><img src="images/Sample_Photos/243/Portrait_Nora.jpg" alt=""></a>
+                    <div class="images-likes">
+                        <p class="nomImage">Nora Portrait</p>
+                        <p class="likesNumber">63 <i class="fas fa-heart"aria-label="likes"></i></p>
+                    </div>
+                </div>
+                <div class="photo" id="photo8">
+                    <a href="images/Sample_Photos/243/lightboximages/Travel_HillsideColor.jpg"><img src="images/Sample_Photos/243/Travel_HillsideColor.jpg" alt=""></a>
+                    <div class="images-likes">
+                        <p class="nomImage">Hillside Color</p>
+                        <p class="likesNumber">85 <i class="fas fa-heart"aria-label="likes"></i></p>
+                    </div>
+                </div>
+                <div class="photo" id="photo9">
+                    <a href="images/Sample_Photos/243/lightboximages/Event_BenevidesWedding.jpg"><img src="images/Sample_Photos/243/Event_BenevidesWedding.jpg" alt=""></a>
+                    <div class="images-likes">
+                        <p class="nomImage">Benevides Wedding</p>
+                        <p class="likesNumber">77 <i class="fas fa-heart"aria-label="likes"></i></p>
+                    </div>
+                </div>
+                <div class="photo" id="photo10">
+                    <a href="images/Sample_Photos/243/lightboximages/Animals_Wild_Horses_in_the_mountains.mp4"><video src="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.mp4" autobuffer controls poster="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.jpg" ></a>
+                    <class class="images-likes"></class>               <!--video poster html sur web   <video src="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.mp4" autobuffer controls poster="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.jpg" ></a>-->
+                        <p class="nomImage">Mimi Keel vidéo</p>
+                        <p class="likesNumber">142 <i class="fas fa-heart"aria-label="likes"></i></p>
+                    </div>
+                </div>
+            </div>
+            <div class="likestotals_remuneration">
+                <p class="likestotals">297081 <i class="fas fa-heart"aria-label="likes"></i></p>
+                <p class="remuneration">300€/ jour</p>
+            </div>
+            <div class="contactPhotographe">
+                <div class="content">
+                    <h1 class="h1Contact">
+                        
+                    </h1>
+                    <span class="close" id="close"></span>
+                    <div class="modal-body">
+                        <form 
+                          action="pagePhotographe.html" 
+                          name="contact" 
+                          method="get" 
+                          id="contact">
+                            <div class="formdata">
+                                <label for="first">Prénom</label><br>
+                                <input
+                                  class="text-control"
+                                  type="text"
+                                  id="first"
+                                  name="first"
+                                /><br>
+                            </div>
+                            <div class="formData">
+                                <label for="last">Nom</label><br>
+                                <input
+                                  class="text-control"
+                                  type="text"
+                                  id="last"
+                                  name="last"
+                                /><br>
+                                <div class="error" id="lastError"></div>
+                            </div>
+                            <div class="formData">
+                                <label for="email">E-mail</label><br>
+                                <input
+                                  class="text-control"
+                                  type="email"
+                                  id="email"
+                                  name="email"
+                                /><br>
+                                <div class="error" id="emailError"></div>
+                            </div>
+                            <div class="formData">
+                                <label for="message">Votre message</label><br>
+                                <input 
+                                  type="message"
+                                  class="text-control"
+                                  id="message"
+                                  name="message"
+                                />
+                            </div><br>
+                            <input
+                              id="submit"
+                              class="button btn-submit"
+                              type="submit"
+                              value="Envoyer"
+                            />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="lightbox">
+            <button class="lightbox__close">fermer</button>
+            <button class="lightbox__next">suivant</button>
+            <button class="lightbox__prev">précédent</button>
+            <div class="lightbox__container">
+                <div class="lightbox__container__photo" id="RainbowBird">
+                    <img src="images/Sample_Photos/243/lightboximages/Animals_Rainbow.jpg" alt="" aria-labelledby="Rainbow Bird">
+                    <p class="nomImage">Rainbow Bird</p>
+                </div>
+            </div>
+
+        </div>
+        <script src="photographe.js"></script>
+    </body>
+</html>
