@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href=".public/css/style.css">
-        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href=".public/css/normalize.css">
         <script src="https://kit.fontawesome.com/1a6b30f0a3.js" crossorigin="anonymous"></script>
         <title>Projet6 FishEye</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,20 +18,20 @@
             </a>
         </div>
         
-        <main>
-            <div class="photographeInfo" id="photographeInfo" role="region" aria-label="photographer profil">
-                <div class="photographeInfo__details">
+        <main class="main">
+         <div class="photographeInfo" id="photographeInfo" role="region" aria-label="photographer profil">
+                <!-- <div class="photographeInfo__details">
                     <h1>Mimi Keel</h1>
                     <p class="countryCity">London,UK</p>
                     <p class="tagline">Voir le beau dans le quotidien</p>
-                    <ul id="Tags">
+                    <ul class="photographerInfoTags">
                         
                     </ul>
                 </div>
                 <button class="modal-btn">Contactez-moi</button>
-                <img  class="portrait" src="images/photo_choisie_des_photographes/MimiKeel.jpg" alt="">
+                <img  class="portrait" src="images/photo_choisie_des_photographes/MimiKeel.jpg" alt="">-->
             </div> 
-            <section class="filter" aria-label="filter media">
+            <section class="filter" aria-label="media's filter ">
                 <div class="filter__dropdown">
                     <label for="OrderBy" class="filter__label">trié par</label>
                     <div class="filter__selection">
@@ -42,13 +42,11 @@
                             <li role="option" class="filter__selection__option" data-value="date" id="date" tabindex="0" aria-selected="false">Date</li>
                             <li role="option" class="filter__selection__option" data-value="title" id="title" tabindex="0" aria-selected="false">Titre</li>
                         </ul>
-                        
                     </div>
                 </div>
-                
             </section>
-            <div class="photos" id="photos">
-                <div class="photo" id="photo1">
+            <div class="gallery" id="gallery">
+              <!--  <div class="photo" id="photo1">
                     <a href="images/Sample_Photos/243/lightboximages/Animals_Rainbow.jpg"><img src="images/Sample_Photos/243/Animals_Rainbow.jpg" alt=""></a>
                     <div class="images-likes">
                         <p class="nomImage">Rainbow Bird</p>
@@ -114,20 +112,18 @@
                 <div class="photo" id="photo10">
                     <a href="images/Sample_Photos/243/lightboximages/Animals_Wild_Horses_in_the_mountains.mp4"><video src="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.mp4" autobuffer controls poster="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.jpg" ></a>
                     <class class="images-likes"></class>               <!--video poster html sur web   <video src="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.mp4" autobuffer controls poster="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.jpg" ></a>-->
-                        <p class="nomImage">Mimi Keel vidéo</p>
+                        <!--<p class="nomImage">Mimi Keel vidéo</p>
                         <p class="likesNumber">142 <i class="fas fa-heart"aria-label="likes"></i></p>
                     </div>
-                </div>
+                </div>-->
             </div>
             <div class="likestotals_remuneration">
                 <p class="likestotals">297081 <i class="fas fa-heart"aria-label="likes"></i></p>
                 <p class="remuneration">300€/ jour</p>
             </div>
             <div class="contactPhotographe">
-                <div class="content">
-                    <h1 class="h1Contact">
-                        
-                    </h1>
+                <div class="content" aria-labelledby="contact" role="dialog">
+                    <div class="nameInTitle"><!--<h1 class="h1Contact"></h1>--></div>
                     <span class="close" id="close"></span>
                     <div class="modal-body">
                         <form 
@@ -135,7 +131,7 @@
                           name="contact" 
                           method="get" 
                           id="contact">
-                            <div class="formdata">
+                            <div class="formData">
                                 <label for="first">Prénom</label><br>
                                 <input
                                   class="text-control"
@@ -164,14 +160,17 @@
                                 /><br>
                                 <div class="error" id="emailError"></div>
                             </div>
-                            <div class="formData">
+                            <class class="formData">
                                 <label for="message">Votre message</label><br>
-                                <input 
+                                <textarea
+                                  cols="30"
+                                  rows="10" 
                                   type="message"
                                   class="text-control"
                                   id="message"
                                   name="message"
-                                />
+                                /></textarea>
+                            </class>
                             </div><br>
                             <input
                               id="submit"
@@ -196,6 +195,6 @@
             </div>
 
         </div>
-        <script src="photographe.js"></script>
+        <script src="pagePhotographers/pagePhotographe.js" type="module"></script>
     </body>
 </html>

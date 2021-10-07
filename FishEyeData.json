@@ -70,7 +70,8 @@
       "tags": ["fashion"],
       "likes": 62,
       "date": "2011-12-08",
-      "price": 55
+      "price": 55,
+      "altTxt": "femme en tenue de sport sexy jaune sur un terrain de basket"
     },
     {
       "id": 8520927,
@@ -80,7 +81,8 @@
       "tags": ["fashion"],
       "likes": 11,
       "date": "2011-11-06",
-      "price": 55
+      "price": 55,
+      "altTxt": "femme de face, accroupie, jambe droite tendue sur un pont"
     },
     {
       "id": 9025895,
@@ -90,7 +92,8 @@
       "tags": ["fashion"],
       "likes": 72,
       "date": "2013-08-12",
-      "price": 55
+      "price": 55,
+      "altTxt": "femme vêtue d'une tunique à rayures multicolor posant devant un mur à damier noir et blanc"
     },
     {
       "id": 9275938,
@@ -100,7 +103,8 @@
       "tags": ["events"],
       "likes": 69,
       "date": "2018-02-22",
-      "price": 55
+      "price": 55,
+      "altTxt": "Allée de mariage menant à un kiosque décoré de fleurs roses et blanches"
     },
     {
       "id": 2053494,
@@ -110,7 +114,8 @@
       "tags": ["events"],
       "likes": 2,
       "date": "2020-05-25",
-      "price": 55
+      "price": 55,
+      "altTxt": "Mariés au premier plan faisant face à leurs invités, qui tiennent des bougies magiques"
     },
     {
       "id": 7324238,
@@ -120,7 +125,8 @@
       "tags": ["events"],
       "likes": 33,
       "date": "2019-06-12",
-      "price": 55
+      "price": 55,
+      "altTxt": "Fête d'anniversaire au restaurant avec deux ballons dorés marqués l'un d'un 1, l'autre d'un 8"
     },
     {
       "id": 8328953,
@@ -130,7 +136,8 @@
       "tags": ["art"],
       "likes": 24,
       "date": "2011-12-08",
-      "price": 100
+      "price": 100,
+      "altTxt": "Sculpture d'un cheval avec différents morceaux de bois, de teintes différente"
     },
     {
       "id": 7502053,
@@ -140,7 +147,8 @@
       "tags": ["art"],
       "likes": 88,
       "date": "2007-05-07",
-      "price": 55
+      "price": 55,
+      "altTxt": "Peinture murale représentant un triangle et le haut du corps d'un homme"
     },
     {
       "id": 8523492,
@@ -150,7 +158,8 @@
       "tags": ["art"],
       "likes": 24,
       "date": "2018-05-05",
-      "price": 55
+      "price": 55,
+      "altTxt": "tunnel d'une gare de metro avec des grafitis sur les murs"
     },
     {
       "id": 75902334,
@@ -160,7 +169,8 @@
       "tags": ["art"],
       "likes": 75,
       "date": "2019-11-25",
-      "price": 55
+      "price": 55,
+      "altTxt": "pigeons de profil peints sur un mur dans les couleurs rouge et bleu"
     },
 
     {

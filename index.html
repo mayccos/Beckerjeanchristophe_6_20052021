@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href=".public/css/style.css">
-        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href=".public/css/normalize.css">
         <script src="https://kit.fontawesome.com/1a6b30f0a3.js" crossorigin="anonymous"></script>
         <title>Projet6 FishEye</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,47 +13,45 @@
     </head>
     <body class="homepage">
         <div class="scroller" id="scroller"><label><a href="" class="passContent">Passez au contenu</a></label></div>
-        <div class="header" role="banner" id="header">
+        <header class="header" role="banner" id="header" aria-label="Fisheye">
             <a  href="index.html" class="header-svg" aria-label="FishEye home page">
                 <img src="icones/logo.svg" alt=""/>
             </a>
             
-            <div role="navigation" class="header-navigation" aria-label="photographer categories">
+            <nav role="navigation" class="header-navigation" aria-label="photographer categories">
                 
-                <ul>
+                <ul class="header-navigation__filter">
                     <li class="header-navigation__item">
-                        <a href="#">#portrait</a>
+                        <a href="#" onclick="displayPhotographersByTags(this)">#portrait</a>
                     </li>
                     <li class="header-navigation__item">
-                        <a href="#">#art</a>
+                        <a href="#" onclick="displayPhotographersByTags(this)">#art</a>
                     </li>
                     <li class="header-navigation__item">
-                        <a href="#">#fashion</a>
+                        <a href="#" onclick="displayPhotographersByTags(this)">#fashion</a>
                     </li>
                     <li class="header-navigation-item">
-                        <a href="#">#architecture</a>
+                        <a href="#" onclick="displayPhotographersByTags(this)">#architecture</a>
                     </li>
                     <li class="header-navigation__item">
-                        <a href="#">#travel</a>
+                        <a href="#" onclick="displayPhotographersByTags(this)">#travel</a>
                     </li>
                     <li class="header-navigation__item">
-                        <a href="#">#sport</a>
+                        <a href="#" onclick="displayPhotographersByTags(this)">#sport</a>
                     </li>
                     <li class="header-navigation__item">
-                        <a href="#">#animals</a>
+                        <a href="#" onclick="displayPhotographersByTags(this)">#animals</a>
                     </li>
                     <li class="header-navigation__item">
-                        <a href="#">#events</a>
+                        <a href="#" onclick="displayPhotographersByTags(this)">#events</a>
                     </li>
                 </ul>
-            </div>
-        </div>
-        <main class="NosPhotographes" name="nosphotographes">
+            </nav>
+        </header>
+        <main class="NosPhotographes" role="region" name="nos photographes">
             <h1>Nos photographes</h1>
-            <div class="photographers" id="photographers">
-                
-            </div>
+            <div role="region" class="photographers" aria-label="list of photographers "></div>
         </main>
-        <script src="app.js"></script>
+        <script src="homepage/home.js" type="module"></script>
     </body>
 </html>

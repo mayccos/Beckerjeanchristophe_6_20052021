@@ -24,11 +24,12 @@ $modalcolor:  #DB8876;
     text-align: center;
     margin-top: 10px;
     line-height: 23px;
+    display: none;
 }
 .passContent{
     color: #000000;
     background-color: $modalcolor;
-    font-size: 0.9em;
+    font-size: 1.2em;
     font-weight: bold;
     font-style: normal;
     align-items: center;
@@ -40,7 +41,7 @@ $modalcolor:  #DB8876;
 
 /*css homepage*/
 .homepage{
-    
+    text-decoration: none;
     background-color: $quaternarycolor;
     ul{
         list-style-type: none;
@@ -54,28 +55,37 @@ $modalcolor:  #DB8876;
         border-radius: 15px;
         border: 1px solid $color5; 
         box-sizing: border-box;
-        &:hover, &:focus{
+        &:focus , &:hover {
             background-color: $primarycolor;
-        }
+            
+        } 
+        
     }
     
 
     /*mise en place du titre et du header*/
     h1{
         color: $primarycolor;
+        font-size: 2.5em;
+        text-align:end;
+        margin-right: 100px;
+        margin-top: -55px;
+        
     }
-    a , .tags{
+    .header-navigation a , .tags{
         color: $primarycolor;
         text-decoration: none;
         font-weight: bold;
         font-style: normal;
         margin: 10px;
-        &:focus, &:hover{
+        &:focus , &:hover{
             color: $quaternarycolor;
+            background-color: $primarycolor;
         }
     }
     
     .header{
+        margin-top: -20px;
         display: grid;
         grid-template-columns: 25% 75%;
         img{
@@ -98,17 +108,16 @@ $modalcolor:  #DB8876;
             padding-top: 2px;
         }
     }
-    h1{
-        font-size: 2.5em;
-        text-align:end;
-        margin-right: 100px;
-        margin-top: -55px;
-        
-    }
+    
     
 } 
     /*mise en place de la liste des photographes*/
-#photographers{
+.OurPhotographers{
+    h1{
+        text-decoration: none;
+    }
+}
+.photographers{
     display: grid;
     grid-template-columns: 30% 30% 30%;
     grid-column-gap: 100px;
@@ -118,9 +127,12 @@ $modalcolor:  #DB8876;
     
 }   
 .photographer{
-   
+    a{
+        text-decoration: none;
+    }
     margin-left: 100px;
     h2{
+        
         color: $secondarycolor;
     }
     text-align: center;
@@ -188,19 +200,24 @@ $modalcolor:  #DB8876;
         
 
 .photographeInfo{
-    display: grid;
-    grid-template-columns: 3 1fr;
-            
-    img{
-        object-fit: cover;
-        width: 200px;
-        border-radius: 50%;
-        height: 200px;
-        grid-column-start: 4;
-        grid-row-start: 1;
-        grid-row-end: 3;
-        margin-top: 30px;
+    &__content{
+        display: grid;
+        grid-template-columns: 40% 40% 20%;
+          
+        img{
+            right: 10px;
+            object-fit: cover;
+            width: 200px;
+            border-radius: 50%;
+            height: 200px;
+            grid-column-start: 3;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            margin-top: 30px;
+        }
+        
     }
+    
     &__details{
         ul{
             margin-left: 80px;
@@ -209,8 +226,7 @@ $modalcolor:  #DB8876;
             flex-wrap: wrap; 
         }
     }
-    
-    li{
+    .Tags{
         margin-left: 20px;
         height: 30px;
         border-radius: 15px;
@@ -219,30 +235,32 @@ $modalcolor:  #DB8876;
         &:hover, &:focus{
             background-color: $primarycolor;
         }
-    }        
- }       
-.countryCity , .tags{
+    }      
+      
+    .countryCity , .tags{
     font-size: 1.5em;
-}
-.tagline{
+    }
+    .tagline{
     font-size: 1.2em;
     color: $tertiarycolor;
     margin-left: 140px;
-}
-.countryCity{
+    }
+    .countryCity{
             margin-left: 140px;
-}
-.tags{
-            font-size: 1.2em;
-            color: $primarycolor;
-            margin: 10px;
-            align-items: center;
-            padding-bottom: 10px ;
-            &:focus, &:hover{
-                color: $quaternarycolor;
-            }
+    }
+    .tags{
+        font-size: 1.2em;
+        color: $primarycolor;
+        margin: 10px;
+        align-items: center;
+        padding-bottom: 10px ;
+        &:focus, &:hover{
+            color: $quaternarycolor;
+        }
+    }
 }
 .modal-btn{
+        
         font-size: 1.2em;
         font-weight: bold;
         border-radius: 5px;
@@ -343,10 +361,10 @@ $modalcolor:  #DB8876;
         
 }
 /*mise place partie liste des photos*/
-.photos{
+.gallery{
         display: grid;
         grid-template-columns: 21% 21% 21%;
-        grid-column-gap: 150px;
+        grid-column-gap: 200px;
         align-items: center;
         margin-top: 50px;
         img{
@@ -464,7 +482,7 @@ $modalcolor:  #DB8876;
     }
 }
     
-.formdata{
+.formData{
     label {
         font-family: var(--font-default);
         font-size: 2.25em;
