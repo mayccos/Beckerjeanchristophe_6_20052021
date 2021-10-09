@@ -86,7 +86,7 @@ let MediaByPhotographerId = async(jsonData, id, filter) => {
     media.map(media => {
         //if Id in URL's parameter = media's id => creation a media's instance
         if (id == media.photographerId) {
-            mediaArray.push(new Media( media.title, media ['image']? media.image : media.video, media.likes, media.date/*, media['image'] ? 'image' : 'video'*/))
+            mediaArray.push(new Media( media.title, media ['image']? media.image : media.video, media.likes, media.date, media.altTxt, media.photographerId))
         }
     })
     sortFilteredMedia(mediaArray, filter)

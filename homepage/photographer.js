@@ -33,9 +33,9 @@ export default class Photographer {
      * construction of Dom element => photographer's price on page photographer
      * @returns string => the Dom element => the price
      */
-    PhotographerPrice = () => {
+    photographerPrice = () => {
         return`
-            <p class="remuneration">${this.price} / jour</p>
+            ${this.price}€ / jour
         `
     }
     

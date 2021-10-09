@@ -336,10 +336,10 @@
   border-radius: 5px;
 }
 
-.photo {
+.media {
   margin-left: 100px;
 }
-.photo p {
+.media p {
   color: #901c1c;
   font-size: 1.5em;
 }
@@ -356,13 +356,14 @@
   display: flex;
   width: 350px;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .likesNumber {
   right: 0%;
 }
 
-.likestotals_remuneration {
+.likesTotals_remuneration {
   position: sticky;
   bottom: 0%;
   left: 71%;
@@ -377,7 +378,7 @@
   height: 40px;
 }
 
-.likestotals, .remuneration {
+.likesTotals, .remuneration {
   display: inline;
 }
 

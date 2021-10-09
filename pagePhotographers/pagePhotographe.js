@@ -1,6 +1,7 @@
 import { parseDataFromJson, PhotographersDataById, MediaByPhotographerId, filterTags} from "/homepage/app.js";
 import Photographer from "/homepage/photographer.js"
 import Media from "/pagePhotographers/media.js"
+import {displayTotalLikes} from "/pagePhotographers/totalLikes.js"
 import Modal from "/pagePhotographers/modal.js";
 
 
@@ -9,6 +10,7 @@ import Modal from "/pagePhotographers/modal.js";
 const main = document.querySelector(".main");
 const photographeInfo = document.querySelector(".photographeInfo");
 const gallery = document.querySelector(".gallery");
+const likesTotalRemuneration = document.querySelector(".likesTotals_remuneration")
 const modalBg = document.querySelector(".contactPhotographe");
 const closeBtn = document.querySelector(".close");
 const modalBtn = document.querySelector(".modal-btn");
@@ -48,7 +50,16 @@ function displayPhotographers(photographers) {
           let photographerInfo = photographer.photographerInfo();
           div.innerHTML = photographerInfo;
           photographeInfo.appendChild(div);
-
+          /**
+           * display remuneration next to likes totals on profil page
+           * @returns HTML element on profil page
+           */
+          const p = document.createElement('p');
+          p.classList.add("remuneration");
+          let remuneration= photographer.photographerPrice();
+          p.innerHTML = remuneration;
+          likesTotalRemuneration.appendChild(p)
+          
           const h1 = document.createElement('h1')
           h1.classList.add("h1Contact")
           let nameContact = photographer.photographerNameTitleForm();
@@ -60,86 +71,54 @@ function displayPhotographers(photographers) {
       console.log(error);
   })
 }
+
 let media="";
 const medias = MediaByPhotographerId(parseDataFromJson(), paramId)
-  console.log(medias);
+ // console.log(medias);
 displayMedias(medias); 
 
   function displayMedias(medias) {
+    
     medias.then(result => {
         media = result;
-       //console.log(media);
         media.forEach(media => {
            let sMedia = new Media (
               media.title,
               media.typeMedia,
               media.likes,
-              media.date
-           );
+              media.date,
+              media.altTxt,
+              media.photographerId
+           );console.log(sMedia);
+
            const div = document.createElement('div');
-           div.classList.add("gallery__content");
-           let mediaGallery = sMedia.mediaCreation;
+           div.classList.add("media");
+           let mediaGallery = sMedia.mediaCreation();
            div.innerHTML = mediaGallery;
            gallery.appendChild(div);
+           
         })
+        
     })
   }
- /*let displayMedia = (id, filter) => { gallery.innerHTML = ""
-  media.then(media =>
+
+/*let displayMedia = (paramId) => {
+  let media = MediaByPhotographerId(parseDataFromJson(), paramId);
+  gallery.innerHTML = "";
+  media.then(media=> {
     media.map(media => {
-       gallery.innerHTML += media.mediaCreation()
+      gallery.innerHTML += media.mediaCreation()
     })
-  ) 
-}*/
-
-
-/*let pMedia = "";
-const medias = MediaByPhotographerId(parseDataFromJson(), paramId);
-console.log(medias);
-displayPMedias(medias);
-function displayPMedias(medias) {
-    medias.then(result => {
-      pMedia = result;
-      console.log(pMedia);
-      pMedia.forEach(pMedia => {
-          let media = new Media(
-            //id, photographerId, title, image, video, tags, likes, date, price
-            
-            pMedia.title,
-            pMedia.image,
-            pMedia.video,
-            
-            pMedia.likes,
-            pMedia.date,
-            
-            pMedia.typeMedia
-          );console.log(media);
-          const div = document.createElement('div');
-          div.classList.add("gallery__content");
-          let photographerInfo = media.mediaCreation();
-          div.innerHTML = photographerInfo;
-          gallery.appendChild(div);
-      })
-    })
-}*/
-/*function displayPhotographersByTags(tag) {
-  DOM.photographersContainer.innerHTML = "";
-  
-  console.log(tag.innerText);
-  let filtre = tag.innerText.slice(1, tag.innerText.length);
-  console.log(filtre);
-  photographers.then(resultat => {
-  let photographersFiltered = filterTags(resultat, filtre);
-  console.log(photographersFiltered);
-  displayPhotographers(photographersFiltered);
-  
-}).catch(error => {
-  console.log(error);
-})
-
+  })
 }
-window.displayPhotographersByTags = displayPhotographersByTags;*/
-/*
+displayMedia(paramId)*/
+/**
+ * display total number of photographer's likes next to remuneration
+ * @return HTML element on profil page
+ */
+displayTotalLikes(MediaByPhotographerId(parseDataFromJson(), paramId));
+
+
 // launch modal message event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
@@ -155,7 +134,7 @@ closeBtn.addEventListener("click", closeModal);
 function closeModal() {
   modalBg.style.display = "none";
   
-}*/
+}
 
 /*
 //filtration des données de photographes en fonction du photographe choisi

@@ -374,7 +374,7 @@ $modalcolor:  #DB8876;
             border-radius: 5px;
         }
 } 
-.photo{
+.media{
         margin-left: 100px;
         p{
             color: $primarycolor;
@@ -392,11 +392,12 @@ $modalcolor:  #DB8876;
         display: flex;
         width: 350px;
         justify-content: space-between;
+        cursor: pointer;
 }
 .likesNumber{
         right: 0%;
 }
-.likestotals_remuneration{
+.likesTotals_remuneration{
         position: sticky;
         bottom: 0%;
         left: 71%;
@@ -414,7 +415,7 @@ $modalcolor:  #DB8876;
 }
     
 
-.likestotals , .remuneration{
+.likesTotals , .remuneration{
         display: inline;
 }
 .remuneration{
