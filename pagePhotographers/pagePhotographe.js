@@ -3,7 +3,8 @@ import Photographer from "/homepage/photographer.js"
 import Media from "/pagePhotographers/media.js"
 import {displayTotalLikes} from "/pagePhotographers/totalLikes.js"
 import Modal from "/pagePhotographers/modal.js";
-
+import {likesTotalLikesVariation} from "/pagePhotographers/likesvariation.js"
+import { validationContact} from "/pagePhotographers/contactValidation.js";
 
 //DOM elements
 
@@ -11,13 +12,8 @@ import Modal from "/pagePhotographers/modal.js";
 const photographeInfo = document.querySelector(".photographeInfo");
 const gallery = document.querySelector(".gallery");
 const likesTotalRemuneration = document.querySelector(".likesTotals_remuneration")
-const modalBg = document.querySelector(".contactPhotographe");
-const closeBtn = document.querySelector(".close");
-const modalBtn = document.querySelector(".modal-btn");
+
 const nameInTitleForm = document.querySelector(".nameInTitle");
-const lightboxClose = document.querySelector(".lightbox__close");
-const lightboxOpen = document.querySelectorAll(".lightbox__container__photo");
-const lightbox = document.querySelector(".lightbox");
 
 
 
@@ -52,7 +48,7 @@ function displayPhotographers(photographers) {
           photographeInfo.appendChild(div);
           /**
            * display remuneration next to likes totals on profil page
-           * @returns HTML element on profil page
+           * @returns HTML element on photographer's page
            */
           const p = document.createElement('p');
           p.classList.add("remuneration");
@@ -60,6 +56,10 @@ function displayPhotographers(photographers) {
           p.innerHTML = remuneration;
           likesTotalRemuneration.appendChild(p)
           
+          /**
+           * display title in contact photographe based on photographer's id
+           * @returns HTML element on photographer's page
+           */
           const h1 = document.createElement('h1')
           h1.classList.add("h1Contact")
           let nameContact = photographer.photographerNameTitleForm();
@@ -71,31 +71,51 @@ function displayPhotographers(photographers) {
       console.log(error);
   })
 }
-
+/**
+ * @param {string} title  media's title
+ * @param {number} likes  like's number of media
+ * @param {string} nameMedia  media's name
+ * @param {string} video name of media video
+ * @param {date}  Media's date
+ * @param {string} altTxt alternatif text of image and video
+ * @returns an array with medias based on photographer's id
+ */
 let media="";
 const medias = MediaByPhotographerId(parseDataFromJson(), paramId)
  // console.log(medias);
 displayMedias(medias); 
 
-  function displayMedias(medias) {
+function displayMedias(medias) {
     
     medias.then(result => {
         media = result;
         media.forEach(media => {
            let sMedia = new Media (
               media.title,
-              media.typeMedia,
+              media.nameMedia,
               media.likes,
               media.date,
               media.altTxt,
               media.photographerId
            );console.log(sMedia);
-
+            /**
+             * display medias on photographer's page
+             * and  medias in lightbox
+             * @returns HTML elements on same page
+             */       
            const div = document.createElement('div');
            div.classList.add("media");
            let mediaGallery = sMedia.mediaCreation();
            div.innerHTML = mediaGallery;
            gallery.appendChild(div);
+           
+           
+           /*const div2 = document.createElement('div');
+           div2.classList.add('lightbox-container__media');
+           let mediaLightbox = sMedia.lightbox();
+           console.log(mediaLightbox);
+           div2.innerHTML = mediaLightbox;
+           lightboxContainer.appendChild(div2);*/
            
         })
         
@@ -109,28 +129,13 @@ displayMedias(medias);
  */
 displayTotalLikes(MediaByPhotographerId(parseDataFromJson(), paramId));
 
-/*
-// launch modal message event
-document.querySelector(".modal-btn").forEach((btn) => btn.addEventListener("click", launchModal));
 
-// launch modal message form
-function launchModal() {
- modalBg.style.display = "block";
- 
-}
 
-// close modal message event
-closeBtn.addEventListener("click", closeModal);
-// close modal message form
-function closeModal() {
-  modalBg.style.display = "none";
-  
-}*/
+
 setTimeout(() => {
 	Modal.modalMessageEvents()
-	/*Lightbox.init()
-	increaseOrDecreaseLikesAndTotalLikes()
-	displaySelectOptions()*/
+  likesTotalLikesVariation()
+  validationContact()
 }, 1000)
 
 

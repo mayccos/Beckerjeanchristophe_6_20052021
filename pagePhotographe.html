@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href=".public/css/style.css">
-        <link rel="stylesheet" href=".public/css/normalize.css">
+        <link rel="stylesheet" href="public/css/style.css">
+        <link rel="stylesheet" href="public/css/normalize.css">
         <script src="https://kit.fontawesome.com/1a6b30f0a3.js" crossorigin="anonymous"></script>
         <title>Projet6 FishEye</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +46,7 @@
                 </div>
             </section>
             <div class="gallery" id="gallery">
-               <div class="media" id="photo1">
+               <!--<div class="media" id="photo1">
                     <img src="images/Sample_Photos/243/Animals_Rainbow.jpg" onclick="openLightbox();toSlide(1)" alt="">
                     <div class="images-likes">
                         <p class="nomImage">Rainbow Bird</p>
@@ -112,46 +112,46 @@
                 <div class="media" id="photo10">
                     <video src="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.mp4" autobuffer controls poster="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.jpg" onclick="openLightbox();toSlide(10)"></video>
                     <div class="images-likes"></div>               <!--video poster html sur web   <video src="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.mp4" autobuffer controls poster="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.jpg" ></a>-->
-                        <p class="nomImage">Mimi Keel vidéo</p>
+                    <!--    <p class="nomImage">Mimi Keel vidéo</p>
                         <p class="likesNumber">142 <i class="fas fa-heart"aria-label="likes"></i></p>
                     </div>
-                </div>
+                </div>-->
                 <div class="lightbox" id="lightbox">
                     
                     <div class="lightbox-container">
-                        <span class="lightbox-container__close" onclick="closeLightbox()">&times;</span>
-                        <a class="lightbox-container__next" onclick="changeSlide(1)">&#10095;</a>
-                        <a class="lightbox-container__preview" onclick="changeSlide(-1)">&#10094</a>
+                        <span class="lightbox-container__close" onclick="closeLightbox()" aria-label="fermer">&times;</span>
+                        <a class="lightbox-container__next" onclick="changeSlide(1)" aria-label="suivant">&#10095;</a>
+                        <a class="lightbox-container__preview" onclick="changeSlide(-1)" aria-label="précédent">&#10094</a>
                         <div class="lightbox-container__media">
-                            <img src="images/Sample_Photos/243/lightboximages/Animals_Rainbow.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
+                            <img src="images/Sample_Photos/243/Animals_Rainbow.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
                             <p class="nomImage">Rainbow Bird</p>
                         </div>
                         <div class="lightbox-container__media" >
-                            <img src="images/Sample_Photos/243/lightboximages/Travel_Lonesome.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
+                            <img src="images/Sample_Photos/243/Travel_Lonesome.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
                             <p class="nomImage">Rainbow Bird</p>
                         </div>
                         <div class="lightbox-container__media">
-                            <img src="images/Sample_Photos/243/lightboximages/Event_SeasideWedding.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
+                            <img src="images/Sample_Photos/243/Event_SeasideWedding.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
                             <p class="nomImage">Rainbow Bird</p>
                         </div>
                         <div class="lightbox-container__media" >
-                            <img src="images/Sample_Photos/243/lightboximages/Portrait_Background.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
+                            <img src="images/Sample_Photos/243/Portrait_Background.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
                             <p class="nomImage">Rainbow Bird</p>
                         </div>
                         <div class="lightbox-container__media">
-                            <img src="images/Sample_Photos/243/lightboximages/Event_PintoWedding.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
+                            <img src="images/Sample_Photos/243/Event_PintoWedding.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
                             <p class="nomImage">Rainbow Bird</p>
                         </div>
                         <div class="lightbox-container__media">
-                            <img src="images/Sample_Photos/243/lightboximages/Portrait_Wednesday.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
+                            <img src="images/Sample_Photos/243//Portrait_Wednesday.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
                             <p class="nomImage">Rainbow Bird</p>
                         </div>
                         <div class="lightbox-container__media">
-                            <img src="images/Sample_Photos/243/lightboximages/Portrait_Nora.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
+                            <img src="images/Sample_Photos/243/Portrait_Nora.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
                             <p class="nomImage">Rainbow Bird</p>
                         </div>
                         <div class="lightbox-container__media">
-                            <img src="images/Sample_Photos/243/lightboximages/Travel_HillsideColor.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
+                            <img src="images/Sample_Photos/243/Travel_HillsideColor.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
                             <p class="nomImage">Rainbow Bird</p>
                         </div>
                         <div class="lightbox-container__media">
@@ -215,6 +215,7 @@
                                   id="message"
                                   name="message"
                                 /></textarea>
+                                <div class="error" id="messageError"></div>
                             </class>
                             </div><br>
                             <input

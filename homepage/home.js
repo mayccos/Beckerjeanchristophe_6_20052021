@@ -4,7 +4,9 @@ const DOM = {
     photographersContainer : document.querySelector('.photographers'),
     navigationFilter : document.querySelector('header-navigation__filter')
 };
-console.log(DOM);
+/**
+ * disp
+ */
 
 let photographes = "";
 const photographers = PhotographersData(parseDataFromJson());

@@ -89,33 +89,8 @@ let MediaByPhotographerId = async(jsonData, id, filter) => {
             mediaArray.push(new Media( media.title, media ['image']? media.image : media.video, media.likes, media.date, media.altTxt, media.photographerId))
         }
     })
-    sortFilteredMedia(mediaArray, filter)
+    
     return mediaArray
 }
-/**
- * Sorts in a array based on parameter
- * @param {object}  Array of media class
- * @param {string} filter media based on photographer's informations to post on pagePhotographe.html
- * @returns filter's objects sorted in a array
-*/
-let sortFilteredMedia = (media, filter) => {
-    switch (filter) {
-        case 'likes':
-          return media.sort((a,b) => {
-              return  b[filter] - a[filter]
-          }) 
-        case 'title':
-          return media.sort((a,b) => {
-            if(a[filter] < b[filter]) { return -1 }
-            if(a[filter] > b[filter]) { return 1 }
-            return 0
-          }) 
-        case 'date':
-          return media.sort((a,b) => {
-            return new Date(b[filter]) - new Date(a[filter])
-          }) 
-        default:
-          break
-    }
-}
+
 export {filterTags, parseDataFromJson, PhotographersData, PhotographersDataById, MediaByPhotographerId}   

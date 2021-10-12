@@ -46,7 +46,7 @@ export default class Photographer {
     photographersCardsTags = () => {
         let liTags =""
         for (let i = 0; i < this.tags.length; i++) {
-            liTags += `<li class="Tags"><a href="./index.html?tag=${this.tags[i]}" class="tags">#${this.tags[i]}</a></li>`
+            liTags += `<li class="Tags"><a href="./index.html?tag=${this.tags[i]}" onclick="displayPhotographersByTags(this)" class="tags">#${this.tags[i]}</a></li>`
             
         }
         return liTags
@@ -76,7 +76,7 @@ export default class Photographer {
     photographerInfoTags = () => {
         let liTags =""
         for (let i = 0; i < this.tags.length; i++) {
-            liTags += `<li class="Tags"><a href="./index.html?tag=${this.tags[i]}" class="tags">#${this.tags[i]}</a></li>`
+            liTags += `<li class="Tags"><a href="./index.html?tag=${this.tags[i]}" onclick="displayPhotographersByTags(this)" class="tags">#${this.tags[i]}</a></li>`
             
         }
         return liTags

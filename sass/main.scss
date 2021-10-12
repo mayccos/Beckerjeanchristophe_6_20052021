@@ -202,7 +202,7 @@ $modalcolor:  #DB8876;
 .photographeInfo{
     &__content{
         display: grid;
-        grid-template-columns: 40% 40% 20%;
+        grid-template-columns: 40% 35% 10%;
           
         img{
             right: 10px;
@@ -256,6 +256,7 @@ $modalcolor:  #DB8876;
         padding-bottom: 10px ;
         &:focus, &:hover{
             color: $quaternarycolor;
+            background-color: $primarycolor;
         }
     }
 }
@@ -364,21 +365,44 @@ $modalcolor:  #DB8876;
 .gallery{
         display: grid;
         grid-template-columns: 21% 21% 21%;
-        grid-column-gap: 200px;
+        grid-column-gap: 170px;
         align-items: center;
         margin-top: 50px;
+        
+} 
+.media{
+        margin-left: 100px;
+        p{
+            color: $primarycolor;
+            font-size: 1.25em;
+        }
         img{
             object-fit: cover;
             width: 350px;
             height: 300px;
             border-radius: 5px;
         }
-} 
-.media{
-        margin-left: 100px;
-        p{
+        &__content{
+            display: flex;
+            justify-content: space-between;
+            width: 350px;
+            font-size: 0.95em;
+        }
+        &__title{
             color: $primarycolor;
-            font-size: 1.5em;
+        }&__likes{
+            justify-content: space-evenly;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            .fas{
+                cursor: pointer;
+                color: $primarycolor;
+            }
+        }
+        &__number{
+            cursor: pointer;
+            right:10px;
         }
 }
     
@@ -388,19 +412,12 @@ $modalcolor:  #DB8876;
 #photo3{
         grid-column-start: 3;
 }
-.images-likes{
-        display: flex;
-        width: 350px;
-        justify-content: space-between;
-        cursor: pointer;
-}
-.likesNumber{
-        right: 0%;
-}
+
+
 .likesTotals_remuneration{
         position: sticky;
         bottom: 0%;
-        left: 71%;
+        left: 400vh;
         text-align: center;
         margin-bottom: 47%;
         padding-top: 20px;
@@ -420,6 +437,80 @@ $modalcolor:  #DB8876;
 }
 .remuneration{
         margin-left: 50px;
+}
+
+/*css lightbox*/
+.lightbox{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding: 10px 62px 0px 62px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: $quaternarycolor;
+}
+.lightbox-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    padding: 0 0 0 0;
+    width: 80%;
+    max-width: 1200px;
+    &__media{
+        display: none;
+        p{
+        font-size: 1.5em;
+        color: $primarycolor;
+        margin-top: 5px;
+        } 
+    }
+    &__close{
+        color: $primarycolor;
+        position: absolute;
+        top: -1vh;
+        right: -20px;
+        font-size: 70px;
+        font-weight: bold;
+        &:hover , &:focus{
+            color: $modalcolor;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+    &__preview , &__next{
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: $primarycolor;
+        font-weight: bold;
+        font-size: 48px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+        &:hover , &:focus{
+            color: $modalcolor;
+        }
+    }
+    &__preview{
+        left: -20px;
+    }
+    &__next{
+        right: -20px;
+        border-radius: 3px 0 0 3px;
+    }
+}
+.media-slide{
+    height: 90vh;
 }
 
 /*css modal*/
@@ -529,156 +620,5 @@ $modalcolor:  #DB8876;
         }
 }
 
-/*css lightbox*/
-.lightbox{
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding: 10px 62px 0px 62px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: $quaternarycolor;
-}
-.lightbox-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
-    padding: 0 0 0 0;
-    width: 80%;
-    max-width: 1200px;
-    &__media{
-        display: none;
-        p{
-        font-size: 1.5em;
-        color: $primarycolor;
-        margin-top: 5px;
-        } 
-    }
-    &__close{
-        color: $primarycolor;
-        position: absolute;
-        top: 30px;
-        right: -20px;
-        font-size: 70px;
-        font-weight: bold;
-        &:hover , &:focus{
-            color: $modalcolor;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    }
-    &__preview , &__next{
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        padding: 16px;
-        margin-top: -50px;
-        color: $primarycolor;
-        font-weight: bold;
-        font-size: 48px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-        -webkit-user-select: none;
-        &:hover , &:focus{
-            color: $modalcolor;
-        }
-    }
-    &__preview{
-        left: -20px;
-    }
-    &__next{
-        right: -20px;
-        border-radius: 3px 0 0 3px;
-    }
-}
-.media-slide{
-    width: 1050px;
-    margin-top: 50px;
-    height: 80vh;
-}
-    /*display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $quaternarycolor;
-    z-index: 2;
+
     
-    
-    &__next, &__prev{
-        background: url('../../icones/arrow.svg') center center / 100% 100%;
-        width: 48px;
-        height: 30px;
-        z-index: 3;
-        
-        top: 50%;
-        right: 0;
-        margin-top: -24px;
-        
-        &:hover, &:focus{
-            background: url('../../icones/arrowHF.svg') center center / 100% 100%;
-        }
-    }
-    &__prev{
-        right: auto;
-        left: 131px;
-        transform: rotate(180deg);
-    }
-    &__next{
-        right: 131px;
-    }
-    &__close{
-        background: url('../../icones/cross.svg') center center / 100% 100%;
-        z-index: 4;
-        width: 42px;
-        height: 42px;
-        top: 40px;
-        right: 126px;
-        &:focus, &:hover{
-            background: url('../../icones/crossHF.svg') center center / 100% 100%;
-        }
-    }
-    button{
-        text-indent: -6000px;
-        transition: .3s;
-        border: none;
-        cursor: pointer;
-        position: fixed;
-       
-    }
-    &__container{
-        width: 87%;
-        height: 96%;
-        display: flex;
-        
-        align-items: center;
-        justify-content: space-between;
-        margin-left: 100px;
-        img{
-            margin-top: 60px;
-            width: 110vh;
-            height: 90vh;
-            
-        }
-        &__photo{
-            
-            p{
-                font-size: 1.5em;
-                color: #901c1c;
-                margin-top: 5px;
-            }
-        }
-        
-    }*/
-
-
-

@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href=".public/css/style.css">
-        <link rel="stylesheet" href=".public/css/normalize.css">
+        <link rel="stylesheet" href="public/css/style.css">
+        <link rel="stylesheet" href="public/css/normalize.css">
         <script src="https://kit.fontawesome.com/1a6b30f0a3.js" crossorigin="anonymous"></script>
         <title>Projet6 FishEye</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
     </head>
     <body class="homepage">
-        <div class="scroller" id="scroller"><label><a href="" class="passContent">Passez au contenu</a></label></div>
+        <div class="scroller" id="scroller" aria-label="scroller"><label><a href="" class="passContent">Passez au contenu</a></label></div>
         <header class="header" role="banner" id="header" aria-label="Fisheye">
             <a  href="index.html" class="header-svg" aria-label="FishEye home page">
                 <img src="icones/logo.svg" alt=""/>
@@ -49,7 +49,7 @@
             </nav>
         </header>
         <main class="NosPhotographes" role="region" name="nos photographes">
-            <h1>Nos photographes</h1>
+            <h1 aria-label="nos photographes">Nos photographes</h1>
             <div role="region" class="photographers" aria-label="list of photographers "></div>
         </main>
         <script src="homepage/home.js" type="module"></script>

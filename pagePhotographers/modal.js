@@ -10,9 +10,9 @@ export default class Modal {
      * to init modal message event
      */
     static modalMessageEvents = () => {
-        document.querySelector(".modal-btn").addEventListener('click', () => {this.launchModal()})
-        document.querySelector(".close").addEventListener('click', () => {this.closeModal()})
-        document.addEventListener('keyup', this.closeKeyup.bind(this))
+        document.querySelector(".modal-btn").addEventListener('click', () => {this.launchModal()});
+        document.querySelector(".close").addEventListener('click', () => {this.closeModal()});
+        document.addEventListener('keyup', this.closeKeyup.bind(this));
     }
     /**
      * @param {keyboardEvent} e
@@ -24,13 +24,13 @@ export default class Modal {
      * launch modal message form and first is focus
      */
     static launchModal = () => {
-        contact.style.display = 'block';
+        document.querySelector(".contactPhotographe").style.display = 'block';
     }
     /**
      * close modal message form
      */
     static closeModal = () => {
-        contact.style.display = 'none'
+        document.querySelector(".contactPhotographe").style.display = 'none'
         document.removeEventListener('keyup', this.closeKeyup)
         
     }

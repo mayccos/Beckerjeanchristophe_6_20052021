@@ -1,17 +1,18 @@
-// Initialize here and run showSlide() to give your lightbox a default state.
+// Initialize here and run showSlide() to give  lightbox a default state.
 
 let slideIndex = 1;
 showSlide(slideIndex);
 
-// You are providing the functionality for your clickable content, which is 
-// your previews, dots, controls and the close button.
+/**
+ * open and close the lightbox
+ */
 
 function openLightbox() {
-  document.getElementById('Lightbox').style.display = 'block';
+  document.getElementById('lightbox').style.display = 'block';
 };
 
 function closeLightbox() {
-  document.getElementById('Lightbox').style.display = 'none';
+  document.getElementById('lightbox').style.display = 'none';
 };
 
 // Note that you are assigning new values here to our slidIndex.
@@ -29,7 +30,7 @@ function toSlide(n) {
 
 function showSlide(n) {
   const slides = document.getElementsByClassName('lightbox-container__media');
-  let modalPreviews = document.getElementsByClassName('modal-preview');
+  //let modalPreviews = document.getElementsByClassName('modal-preview');
 
   if (n > slides.length) {
     slideIndex = 1;	
@@ -43,9 +44,9 @@ function showSlide(n) {
     slides[i].style.display = "none";
   };
   
-  for (let i = 0; i < modalPreviews.length; i++) {
+  /*for (let i = 0; i < modalPreviews.length; i++) {
     modalPreviews[i].className = modalPreviews[i].className.replace(' active', '');
-  };
+  };*/
   
   slides[slideIndex - 1].style.display = 'block';
   //modalPreviews[slideIndex - 1].className += ' active';
