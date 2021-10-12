@@ -419,24 +419,29 @@ $modalcolor:  #DB8876;
         bottom: 0%;
         left: 400vh;
         text-align: center;
-        margin-bottom: 47%;
+        margin-bottom: 50%;
         padding-top: 20px;
         font-weight: 700;
         font-size: 1.5em;
         background-color: $modalcolor;
         border-radius: 5px;
-        width: 376px;
+        width: 350px;
         height: 40px;
-        
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
         
 }
+.likesTotals{
+    display: flex;
+    align-items: center;
     
+}    
 
-.likesTotals , .remuneration{
-        display: inline;
-}
+
 .remuneration{
         margin-left: 50px;
+        
 }
 
 /*css lightbox*/
@@ -511,8 +516,11 @@ $modalcolor:  #DB8876;
 }
 .media-slide{
     height: 90vh;
+    
 }
-
+#video{
+    width: 105vh;
+}
 /*css modal*/
 .contactPhotographe{
         display: none;

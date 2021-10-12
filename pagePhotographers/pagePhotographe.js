@@ -11,8 +11,8 @@ import { validationContact} from "/pagePhotographers/contactValidation.js";
 
 const photographeInfo = document.querySelector(".photographeInfo");
 const gallery = document.querySelector(".gallery");
-const likesTotalRemuneration = document.querySelector(".likesTotals_remuneration")
-
+const likesTotalRemuneration = document.querySelector(".likesTotals_remuneration");
+const lightboxContainer = document.querySelector('.lightbox-container');
 const nameInTitleForm = document.querySelector(".nameInTitle");
 
 
@@ -89,7 +89,7 @@ function displayMedias(medias) {
     
     medias.then(result => {
         media = result;
-        media.forEach(media => {
+        media.forEach((media,index) => {
            let sMedia = new Media (
               media.title,
               media.nameMedia,
@@ -97,7 +97,7 @@ function displayMedias(medias) {
               media.date,
               media.altTxt,
               media.photographerId
-           );console.log(sMedia);
+           );
             /**
              * display medias on photographer's page
              * and  medias in lightbox
@@ -105,17 +105,17 @@ function displayMedias(medias) {
              */       
            const div = document.createElement('div');
            div.classList.add("media");
-           let mediaGallery = sMedia.mediaCreation();
+           let mediaGallery = sMedia.mediaCreation(index + 2);
            div.innerHTML = mediaGallery;
            gallery.appendChild(div);
            
            
-           /*const div2 = document.createElement('div');
+           const div2 = document.createElement('div');
            div2.classList.add('lightbox-container__media');
-           let mediaLightbox = sMedia.lightbox();
-           console.log(mediaLightbox);
+           let mediaLightbox = sMedia.lightboxCreation();
+           
            div2.innerHTML = mediaLightbox;
-           lightboxContainer.appendChild(div2);*/
+           lightboxContainer.appendChild(div2);
            
         })
         
@@ -135,7 +135,7 @@ displayTotalLikes(MediaByPhotographerId(parseDataFromJson(), paramId));
 setTimeout(() => {
 	Modal.modalMessageEvents()
   likesTotalLikesVariation()
-  validationContact()
+  //validationContact()
 }, 1000)
 
 

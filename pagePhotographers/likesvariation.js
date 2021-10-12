@@ -5,19 +5,19 @@ let likesTotalLikesVariation = () => {
     const mediaLikes = document.querySelectorAll('.media__likes');
     mediaLikes.forEach(like => {
         ['click', 'keyup'].forEach(event => like.addEventListener(event , (e) => {
-            let likesTotals = document.querySelector('.likesTotals');
+            let likesTotalsNumber = document.querySelector('.likesTotals');
             if (e.key == 'Enter') {
                 if(!like.classList.contains('media__liked')) {
-                    likesTotalLikesIncrease(likesTotals, like);
+                    likesTotalLikesIncrease(likesTotalsNumber, like);
                 }else{
-                    likesTotalLikesDecrease(likesTotals, like);
+                    likesTotalLikesDecrease(likesTotalsNumber, like);
                 }
                 
             }else if (e.type == 'click') {
                 if(!like.classList.contains('media__liked')) {
-                    totalLikesLikesIncreased(likesTotals, like);
+                    totalLikesLikesIncreased(likesTotalsNumber, like);
                 }else{
-                    totalLikesLikesDecreased(likesTotals, like);
+                    totalLikesLikesDecreased(likesTotalsNumber, like);
                 }
                  
             }

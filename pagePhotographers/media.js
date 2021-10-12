@@ -23,12 +23,12 @@ export default class Media{
         * creation of media 
         * @returns instance of media
         */
-        mediaCreation() {
-
+        mediaCreation(positionMedia) {
+            
             let poster = this.nameMedia.slice(0, -4) +'.jpg';
             return`
             
-            <img src="images/Sample_Photos/${this.photographerId}/${poster}" onclick="openLightbox();toSlide(1)" alt="${this.altTxt}">
+            <img src="images/Sample_Photos/${this.photographerId}/${poster}" onclick="openLightbox();toSlide(${positionMedia})" alt="${this.altTxt}">
             <div class="media__content">    
                <h2 class="media__title">${this.title}</h2>
                <div class="media__likes">
@@ -46,6 +46,22 @@ export default class Media{
          */
         totalLikes(){
             return `${this.totalLikes} <i class="fas fa-heart"aria-label="likes"></i>`
+        }
+        lightboxCreation(){
+            let poster = this.nameMedia.slice(0, -4) +'.jpg';
+            let extensionNM = this.nameMedia.slice(-3);
+            console.log(extensionNM);
+            if (extensionNM == 'jpg') {
+                return `
+                       <img src="images/Sample_Photos/${this.photographerId}/${this.nameMedia}" class="media-slide" alt="" aria-labelledby="${this.title}">
+                       <p class="nomImage">${this.title}</p>
+            `
+            }else {
+                return `
+                <video src="images/Sample_Photos/${this.photographerId}/${this.nameMedia}" class="media-slide" id="video" autobuffer controls poster="images/Sample_Photos/${this.photographerId}/${poster}" aria-label="${this.title}"></video>
+                <p class="nomImage">${this.title}</p>`
+            }
+            
         }
 
 }

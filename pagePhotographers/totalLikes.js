@@ -1,5 +1,5 @@
 //DOM  display total of media's likes 
-const likesTotals = document.querySelector(".likesTotals");
+const likesTotals = document.querySelector('.likesTotals');
 
 /**
  * @param {object} medias
@@ -11,7 +11,7 @@ let displayTotalLikes = (medias) => {
         medias.map(media => {
             totalLikes += media.likes
         });
-        return likesTotals.insertAdjacentHTML('beforeend', `${totalLikes} <img src="./icones/heartblack.svg" aria-label="likes">`);
+        return likesTotals.insertAdjacentHTML('beforeend', `${totalLikes}`);
 
     })
 }
