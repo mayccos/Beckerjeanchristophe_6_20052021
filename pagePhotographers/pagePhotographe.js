@@ -4,11 +4,14 @@ import Media from "/pagePhotographers/media.js"
 import {displayTotalLikes} from "/pagePhotographers/totalLikes.js"
 import Modal from "/pagePhotographers/modal.js";
 import {likesTotalLikesVariation} from "/pagePhotographers/likesvariation.js"
-import { validationContact} from "/pagePhotographers/contactValidation.js";
+//import { hideSelectedOptionInSelect, removeClassToHideDuplicateOptionInSelect} from"/pagePhotographers/mediaselecter.js"
+//import { validationContact} from "/pagePhotographers/contactValidation.js";
 
 //DOM elements
 
-
+const filterSelecter = document.querySelector('.filter__selecter');
+const filterSelectionMenu = document.querySelector('.filter__selection__menu');
+const filterSelectionOption = document.querySelector('.filter__selection__option')
 const photographeInfo = document.querySelector(".photographeInfo");
 const gallery = document.querySelector(".gallery");
 const likesTotalRemuneration = document.querySelector(".likesTotals_remuneration");
@@ -80,6 +83,7 @@ function displayPhotographers(photographers) {
  * @param {string} altTxt alternatif text of image and video
  * @returns an array with medias based on photographer's id
  */
+
 let media="";
 const medias = MediaByPhotographerId(parseDataFromJson(), paramId)
  // console.log(medias);
@@ -102,10 +106,11 @@ function displayMedias(medias) {
              * display medias on photographer's page
              * and  medias in lightbox
              * @returns HTML elements on same page
-             */       
+             */
+           
            const div = document.createElement('div');
            div.classList.add("media");
-           let mediaGallery = sMedia.mediaCreation(index + 2);
+           let mediaGallery = sMedia.mediaCreation(index + 2);//position media in lightbox
            div.innerHTML = mediaGallery;
            gallery.appendChild(div);
            
@@ -121,15 +126,14 @@ function displayMedias(medias) {
         
     })
   }
-
+  
 
 /**
  * display total number of photographer's likes next to remuneration
  * @return HTML element on profil page
  */
 displayTotalLikes(MediaByPhotographerId(parseDataFromJson(), paramId));
-
-
+// function called at form submit event
 
 
 setTimeout(() => {

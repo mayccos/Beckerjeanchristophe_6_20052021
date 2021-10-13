@@ -143,6 +143,7 @@ $modalcolor:  #DB8876;
         width: 200px;
         border-radius: 50%;
         height: 200px;
+        box-shadow: 10px 10px 10px $color5;
     }
     ul {
         flex-wrap: nowrap;
@@ -281,86 +282,82 @@ $modalcolor:  #DB8876;
 /*menu filtre*/
     
 .filter{
+    margin-top: 50px;
+    width: 20%;
+    margin-left: 20vh;
+    &__selector {
+        background: $primarycolor;
+        color: $quaternarycolor;
+        border-radius: 5px;
+        width: 170px;
+        height: 69px;
+        font-size: 1.25em;
+        font-family: inherit;
+        letter-spacing: 1px;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        text-align: left;
+        padding-left: 20px;
+    }
+    &__dropdown{
         display: flex;
-        text-align:left;
-        margin-top: 50px;
-        margin-left: 100px;
-        &__dropdown{
-            display: flex;
-            align-items: baseline;
-            
-        }
-        &__label{
-            font-weight: 700;
-            font-size: 1.2em;
-        }
-        #OrderBy{
-            
-            border-radius: 5px;
-            background-color: $primarycolor;
-            color: $quaternarycolor;
-            font-size: 1.2em;
-            margin-left: 40px;
-            width: 180px;
-            height: 69px;
-            font-family: var(--font-default);
-            letter-spacing: 1px;
-            font-weight: bold;
-            cursor: pointer;
-            border: none;
-            text-align: left;
-            padding-left: 20px;
-        }
-        &__selection{
-            position: relative;
-            display: flex;
-            align-items: center;
-            
-            &__arrow{
-                
-                position: absolute;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                top: 1px;
-                right: 1px;
-                border-radius: 5px;
-                height: 95%;
-                width: 40px;
-                cursor: pointer;
-                margin: auto;
-                &:before {
-                    content: url('../../icones/selection-arrow.svg');
-                }  
-            }
-            &__menu{
-                left: 4.5vh;
-                position: absolute;
-                top: -2.3vh;
-                z-index: 12;
-                background: $primarycolor;
-                color: $quaternarycolor;
-                width: 170px;
-                font-size: 1.2em;
-                font-weight: bold;
-                padding: 0 10px;
-                border-radius:  5px;
-                display: none;
-                letter-spacing: 1px;
-                box-shadow: 0px 4px 4px 0px #00000040;
-            }
-            &__option{
-                padding: 14px 0 14px 10px;
-                border-top: 1px solid $quaternarycolor;
-                cursor: pointer;
+        align-items: baseline;
+        justify-content: space-evenly;
+    }
+    &__label{
+        font-size: 1.25em;
+        font-weight: bold;
+    }
+    &__selection {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    &__selection-arrow {
+        transition: transform 300ms;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 1px;
+        right: 1px;
+        border-radius: 5px;
+        height: 95%;
+        width: 40px;
+        cursor: pointer;
+        margin: auto;
+        &::before {
+            content: url('../../icones/selection-arrow.svg');
+        }  
+    }
+    &__selection-menu {
+        position: absolute;
+        top: 63px;
+        z-index: 12;
+        background: $primarycolor;
+        color: $quaternarycolor;
+        width: 100%;
+        font-size: 1.25em;
+        font-weight: bold;
+        padding: 0 10px;
+        border-radius: 0 0 5px 5px;
+        //display: none;
+        letter-spacing: 1px;
+        box-shadow: 0px 4px 4px 0px #00000040;
+        list-style-type: none;
 
-            }
-            #popularity{
-                border-top: 10px solid $primarycolor;
-            }
-        }
-        
+    }
+    &__selection-option {
+        padding: 14px 0 14px 10px;
+        border-top: 1px solid $quaternarycolor;
+        cursor: pointer;
+    }
+    &__show {
+        display: block;
+    }
 }
+       
 /*mise place partie liste des photos*/
 .gallery{
         display: grid;
@@ -378,6 +375,7 @@ $modalcolor:  #DB8876;
         }
         img{
             object-fit: cover;
+            
             width: 350px;
             height: 300px;
             border-radius: 5px;
@@ -611,6 +609,24 @@ $modalcolor:  #DB8876;
 }
 #message{
         height: 170px;
+}
+.formData[data-error]::after {
+    content: attr(data-error);
+    font-size: 0.4em;
+    color: $primarycolor;
+    display: block;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    text-align: right;
+    line-height: 0.3;
+    opacity: 0;
+    transition: 0.3s;
+}
+.formData[data-error-visible="true"]::after {
+    opacity: 1;
+}
+.formData[data-error-visible="true"] .text-control {
+    border: 2px solid $primarycolor;
 }
 #submit{
         border-radius: 5px;

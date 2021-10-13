@@ -35,12 +35,12 @@
                 <div class="filter__dropdown">
                     <label for="OrderBy" class="filter__label">trié par</label>
                     <div class="filter__selection">
-                        <input name="filtermedia" id="OrderBy" class="filter__selecter" type="button" value="Populatité" role="button" aria-haspopup="listbox">
-                        <span class="filter__selection__arrow"></span>
-                        <ul class="filter__selection__menu" role="listbox" aria-labelledby="OrderBy">
-                            <li role="option" class="filter__selection__option" data-value="popularity" id="popularity" tabindex="0" aria-selected="true">Popularité</li>
-                            <li role="option" class="filter__selection__option" data-value="date" id="date" tabindex="0" aria-selected="false">Date</li>
-                            <li role="option" class="filter__selection__option" data-value="title" id="title" tabindex="0" aria-selected="false">Titre</li>
+                        <input name="filterMedia" id="OrderBy" class="filter__selector" type="button" value="Populatité" role="bouton" aria-haspopup="listbox">
+                        <span class="filter__selection-arrow"></span>
+                        <ul class="filter__selection-menu" role="listbox" aria-labelledby="OrderBy">
+                            <li role="option" class="filter__selection-option" data-value="popularity" id="popularity" tabindex="0" aria-selected="true">Popularité</li>
+                            <li role="option" class="filter__selection-option" data-value="date" id="date" tabindex="0" aria-selected="false">Date</li>
+                            <li role="option" class="filter__selection-option" data-value="title" id="title" tabindex="0" aria-selected="false">Titre</li>
                         </ul>
                     </div>
                 </div>
@@ -186,8 +186,11 @@
                                   type="text"
                                   id="first"
                                   name="first"
+                                  
                                 /><br>
-                            </div>
+                                <div class="error" id="firstError"></div>
+                            </div>    
+                            
                             <div class="formData">
                                 <label for="last">Nom</label><br>
                                 <input
@@ -195,9 +198,11 @@
                                   type="text"
                                   id="last"
                                   name="last"
+                                  
                                 /><br>
                                 <div class="error" id="lastError"></div>
-                            </div>
+                            </div>    
+                            
                             <div class="formData">
                                 <label for="email">E-mail</label><br>
                                 <input
@@ -205,10 +210,12 @@
                                   type="email"
                                   id="email"
                                   name="email"
+                                  
                                 /><br>
                                 <div class="error" id="emailError"></div>
-                            </div>
-                            <class class="formData">
+                            </div>   
+                            
+                            <div class="formData">
                                 <label for="message">Votre message</label><br>
                                 <textarea
                                   cols="30"
@@ -217,10 +224,11 @@
                                   class="text-control"
                                   id="message"
                                   name="message"
-                                /></textarea>
-                                <div class="error" id="messageError"></div>
-                            </class>
-                            </div><br>
+                                  
+                                /></textarea><br>
+                                <div class="error" id="messageError"></div><br>
+                            </div>    
+                            
                             <input
                               id="submit"
                               class="button btn-submit"
@@ -235,5 +243,6 @@
         
         <script src="pagePhotographers/pagePhotographe.js" type="module"></script>
         <script src="pagePhotographers/lightbox.js"></script>
+        <script src="pagePhotographers/contactValidation.js"></script>
     </body>
 </html>

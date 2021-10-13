@@ -10,8 +10,10 @@ const firstError = document.getElementById("firstError");
 const lastError = document.getElementById("lastError");
 const emailError = document.getElementById("emailError");
 const messageError = document.getElementById("messageError")
-
-    
+const form = document.getElementById("contact");
+ /**
+  * @param {regex} Regex to validate inputs
+  */   
 const textInput = /^[a-zA-Z]{1,}[^0-9.+*/$%µ!§:;,?={}²&~"#()`@]$/;
 const mailInput = /^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,6}$/;
 
@@ -29,6 +31,7 @@ function validInputs(){
         if(textInput.exec(firstName.value) === null || first.length < 2) {
             firstError.textContent = "Veuillez renseigner 2 caractères minimum pour le prénom";
             firstError.style.color = "red";
+            firstError.style.marginLeft = "30px"
             firstError.style.fontSize = "15px";
             first.style.borderColor = "red";
             first.style.borderWidth = "2px";
@@ -45,6 +48,7 @@ function validInputs(){
        if(textInput.exec(lastName.value) === null || last.length < 2) {
             lastError.textContent = "Veuillez renseigner 2 caractères minimum pour le nom";
             lastError.style.color = "red";
+            lastError.style.marginLeft = "30px";
             lastError.style.fontSize = "15px";
             last.style.borderColor = "red";
             last.style.borderWidth = "2px";
@@ -61,6 +65,7 @@ function validInputs(){
         if(mailInput.exec(email.value) === null) {
             emailError.textContent = "Veuillez renseigner une adresse mail valide";
             emailError.style.color = "red";
+            emailError.style.marginLeft = "30px";
             emailError.style.fontSize = "15px";
             email.style.borderColor = "red";
             email.style.borderWidth = "2px";
@@ -71,12 +76,13 @@ function validInputs(){
         }
 
         /**
-         *   if messaget.value is empty and is different regex(textInput),
+         *   if message.value is empty and is different regex(textInput),
          *  or last.length is less than 2 characters => error message 
          */
-        if(textInput.exec(message.value) === null || first.length < 2) {
+        if(textInput.exec(message.value) === null || message.length < 2) {
             messageError.textContent = "Veuillez renseigner 2 caractères minimum pour votre message";
             messageError.style.color = "red";
+            messageError.style.marginLeft = "30px"
             messageError.style.fontSize = "15px";
             message.style.borderColor = "red";
             message.style.borderWidth = "2px";
@@ -105,4 +111,7 @@ function validationContact(e){
     }
 
 }
-export {validationContact};
+// listening submit event on form element so function validate is run
+form.addEventListener("submit", validationContact);
+
+//export {validationContact};

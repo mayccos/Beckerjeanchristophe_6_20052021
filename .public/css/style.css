@@ -126,6 +126,7 @@
   width: 200px;
   border-radius: 50%;
   height: 200px;
+  box-shadow: 10px 10px 10px #c4c4c4;
 }
 .photographer ul {
   flex-wrap: nowrap;
@@ -247,28 +248,18 @@
 
 /*menu filtre*/
 .filter {
-  display: flex;
-  text-align: left;
   margin-top: 50px;
-  margin-left: 100px;
+  width: 20%;
+  margin-left: 20vh;
 }
-.filter__dropdown {
-  display: flex;
-  align-items: baseline;
-}
-.filter__label {
-  font-weight: 700;
-  font-size: 1.2em;
-}
-.filter #OrderBy {
-  border-radius: 5px;
-  background-color: #901c1c;
+.filter__selector {
+  background: #901c1c;
   color: #ffffff;
-  font-size: 1.2em;
-  margin-left: 40px;
-  width: 180px;
+  border-radius: 5px;
+  width: 170px;
   height: 69px;
-  font-family: var(--font-default);
+  font-size: 1.25em;
+  font-family: inherit;
   letter-spacing: 1px;
   font-weight: bold;
   cursor: pointer;
@@ -276,12 +267,22 @@
   text-align: left;
   padding-left: 20px;
 }
+.filter__dropdown {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+.filter__label {
+  font-size: 1.25em;
+  font-weight: bold;
+}
 .filter__selection {
   position: relative;
   display: flex;
   align-items: center;
 }
-.filter__selection__arrow {
+.filter__selection-arrow {
+  transition: transform 300ms;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -294,32 +295,31 @@
   cursor: pointer;
   margin: auto;
 }
-.filter__selection__arrow:before {
+.filter__selection-arrow::before {
   content: url("../../icones/selection-arrow.svg");
 }
-.filter__selection__menu {
-  left: 4.5vh;
+.filter__selection-menu {
   position: absolute;
-  top: -2.3vh;
+  top: 63px;
   z-index: 12;
   background: #901c1c;
   color: #ffffff;
-  width: 170px;
-  font-size: 1.2em;
+  width: 100%;
+  font-size: 1.25em;
   font-weight: bold;
   padding: 0 10px;
-  border-radius: 5px;
-  display: none;
+  border-radius: 0 0 5px 5px;
   letter-spacing: 1px;
   box-shadow: 0px 4px 4px 0px #00000040;
+  list-style-type: none;
 }
-.filter__selection__option {
+.filter__selection-option {
   padding: 14px 0 14px 10px;
   border-top: 1px solid #ffffff;
   cursor: pointer;
 }
-.filter__selection #popularity {
-  border-top: 10px solid #901c1c;
+.filter__show {
+  display: block;
 }
 
 /*mise place partie liste des photos*/
@@ -572,6 +572,27 @@
 
 #message {
   height: 170px;
+}
+
+.formData[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.4em;
+  color: #901c1c;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: right;
+  line-height: 0.3;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.formData[data-error-visible=true]::after {
+  opacity: 1;
+}
+
+.formData[data-error-visible=true] .text-control {
+  border: 2px solid #901c1c;
 }
 
 #submit {
