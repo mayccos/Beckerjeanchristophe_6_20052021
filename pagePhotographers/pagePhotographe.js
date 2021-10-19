@@ -1,17 +1,17 @@
-import { parseDataFromJson, PhotographersDataById, MediaByPhotographerId, filterTags} from "/homepage/app.js";
+import { parseDataFromJson, PhotographersDataById, MediaByPhotographerId} from "/homepage/app.js";
 import Photographer from "/homepage/photographer.js"
 import Media from "/pagePhotographers/media.js"
 import {displayTotalLikes} from "/pagePhotographers/totalLikes.js"
 import Modal from "/pagePhotographers/modal.js";
 import {likesTotalLikesVariation} from "/pagePhotographers/likesvariation.js"
-//import { hideSelectedOptionInSelect, removeClassToHideDuplicateOptionInSelect} from"/pagePhotographers/mediaselecter.js"
-//import { validationContact} from "/pagePhotographers/contactValidation.js";
+import {displaySelectOptions} from "/pagePhotographers/mediaSelector.js";
+
+ 
+
 
 //DOM elements
 
-const filterSelecter = document.querySelector('.filter__selecter');
-const filterSelectionMenu = document.querySelector('.filter__selection__menu');
-const filterSelectionOption = document.querySelector('.filter__selection__option')
+
 const photographeInfo = document.querySelector(".photographeInfo");
 const gallery = document.querySelector(".gallery");
 const likesTotalRemuneration = document.querySelector(".likesTotals_remuneration");
@@ -125,8 +125,8 @@ function displayMedias(medias) {
         })
         
     })
-  }
-  
+    
+}
 
 /**
  * display total number of photographer's likes next to remuneration
@@ -138,8 +138,9 @@ displayTotalLikes(MediaByPhotographerId(parseDataFromJson(), paramId));
 
 setTimeout(() => {
 	Modal.modalMessageEvents()
-  likesTotalLikesVariation()
-  //validationContact()
+    likesTotalLikesVariation()
+    displaySelectOptions()
+  
 }, 1000)
 
 

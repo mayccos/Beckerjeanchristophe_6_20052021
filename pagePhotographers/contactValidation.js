@@ -1,7 +1,6 @@
 /**
  * to create a class validation of contact
  */
-
 const firstName = document.getElementById("first");
 const lastName = document.getElementById("last");
 const email = document.getElementById("email");
@@ -10,7 +9,7 @@ const firstError = document.getElementById("firstError");
 const lastError = document.getElementById("lastError");
 const emailError = document.getElementById("emailError");
 const messageError = document.getElementById("messageError")
-const form = document.getElementById("contact");
+const form = document.querySelector(".contactPhotographe");
  /**
   * @param {regex} Regex to validate inputs
   */   
@@ -28,34 +27,34 @@ function validInputs(){
       *  if first.value is empty and is different regex(textInput),
       * or first.length is less than 2 characters => error message
       */
-        if(textInput.exec(firstName.value) === null || first.length < 2) {
+        if(textInput.exec(firstName.value) === null || firstName.length < 2) {
             firstError.textContent = "Veuillez renseigner 2 caractères minimum pour le prénom";
             firstError.style.color = "red";
             firstError.style.marginLeft = "30px"
             firstError.style.fontSize = "15px";
-            first.style.borderColor = "red";
-            first.style.borderWidth = "2px";
+            firstName.style.borderColor = "red";
+            firstName.style.borderWidth = "2px";
             return formValid === false;
         }else {
             firstError.style.display = "none";
-            first.style = "default";
+            firstName.style = "default";
         }
 
      /** 
       *  if last.value is empty and is different regex(textInput),
       *  or last.length is less than 2 characters => error message
       */
-       if(textInput.exec(lastName.value) === null || last.length < 2) {
+       if(textInput.exec(lastName.value) === null || lastName.length < 2) {
             lastError.textContent = "Veuillez renseigner 2 caractères minimum pour le nom";
             lastError.style.color = "red";
             lastError.style.marginLeft = "30px";
             lastError.style.fontSize = "15px";
-            last.style.borderColor = "red";
-            last.style.borderWidth = "2px";
+            lastName.style.borderColor = "red";
+            lastName.style.borderWidth = "2px";
             return formValid === false;
         }else {
             lastError.style.display = "none";
-            last.style = "default";
+            lastName.style = "default";
         }
 
      /**
@@ -93,8 +92,7 @@ function validInputs(){
         }
         return formValid = true;
 
-};
-
+}
 // function called at form submit event
 function validationContact(e){
 
@@ -106,12 +104,14 @@ function validationContact(e){
     // all inputs must be true so the form can be submitted correctly
     // if so, confirmation message and red close button are displayed
     if(formValid === true) {
-      form.style.display = "none"; 
+      form.style.display = "none";
+      console.log(lastName.value, firstName.value, email.value, message.value)
+      
       return true;
     }
-
+  
 }
+
 // listening submit event on form element so function validate is run
 form.addEventListener("submit", validationContact);
 
-//export {validationContact};

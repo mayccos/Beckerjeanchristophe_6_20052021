@@ -1,10 +1,11 @@
    
     
 export default class Modal {
-    static element = {
+    static element  = {
      closeBtn : document.querySelector(".close"),
      modalBtn : document.querySelector(".modal-btn"),
-     contact : document.querySelector(".contactPhotographe")
+     contact : document.querySelector(".contactPhotographe"),
+     body : document.querySelector(".pagePhotographe")
     }    
     /** 
      * to init modal message event
@@ -25,6 +26,7 @@ export default class Modal {
      */
     static launchModal = () => {
         document.querySelector(".contactPhotographe").style.display = 'block';
+        document.querySelector(".pagePhotographe").style.overflow = 'hidden';
     }
     /**
      * close modal message form
@@ -32,6 +34,6 @@ export default class Modal {
     static closeModal = () => {
         document.querySelector(".contactPhotographe").style.display = 'none'
         document.removeEventListener('keyup', this.closeKeyup)
-        
+        document.querySelector(".pagePhotographe").style.overflow = '';
     }
 }

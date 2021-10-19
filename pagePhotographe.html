@@ -19,7 +19,7 @@
         </div>
         
         <main class="main">
-         <div class="photographeInfo" id="photographeInfo" role="region" aria-label="photographer profil">
+            <div class="photographeInfo" id="photographeInfo" role="region" aria-label="photographer profil">
                 <!-- <div class="photographeInfo__details">
                     <h1>Mimi Keel</h1>
                     <p class="countryCity">London,UK</p>
@@ -35,7 +35,7 @@
                 <div class="filter__dropdown">
                     <label for="OrderBy" class="filter__label">trié par</label>
                     <div class="filter__selection">
-                        <input name="filterMedia" id="OrderBy" class="filter__selector" type="button" value="Populatité" role="bouton" aria-haspopup="listbox">
+                        <input name="filterMedia" id="OrderBy" class="filter__selector" type="button" value="Populatité" role="button" aria-haspopup="listbox">
                         <span class="filter__selection-arrow"></span>
                         <ul class="filter__selection-menu" role="listbox" aria-labelledby="OrderBy">
                             <li role="option" class="filter__selection-option" data-value="popularity" id="popularity" tabindex="0" aria-selected="true">Popularité</li>
@@ -186,7 +186,7 @@
                                   type="text"
                                   id="first"
                                   name="first"
-                                  
+                                  aria-label="first Name"
                                 /><br>
                                 <div class="error" id="firstError"></div>
                             </div>    
@@ -198,7 +198,7 @@
                                   type="text"
                                   id="last"
                                   name="last"
-                                  
+                                  aria-label="last Name"
                                 /><br>
                                 <div class="error" id="lastError"></div>
                             </div>    
@@ -210,7 +210,7 @@
                                   type="email"
                                   id="email"
                                   name="email"
-                                  
+                                  aria-label="email"
                                 /><br>
                                 <div class="error" id="emailError"></div>
                             </div>   
@@ -224,7 +224,7 @@
                                   class="text-control"
                                   id="message"
                                   name="message"
-                                  
+                                  aria-label="message"
                                 /></textarea><br>
                                 <div class="error" id="messageError"></div><br>
                             </div>    
@@ -234,6 +234,7 @@
                               class="button btn-submit"
                               type="submit"
                               value="Envoyer"
+                              onsubmit="console.log()"
                             />
                         </form>
                     </div>
@@ -244,5 +245,6 @@
         <script src="pagePhotographers/pagePhotographe.js" type="module"></script>
         <script src="pagePhotographers/lightbox.js"></script>
         <script src="pagePhotographers/contactValidation.js"></script>
+        <!--<script src="pagePhotographers/mediaSelector.js"></script>-->
     </body>
 </html>
