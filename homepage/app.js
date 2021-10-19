@@ -17,7 +17,7 @@ import Photographer from './photographer.js'
  * @returns parsed data as Json format
  */
 let parseDataFromJson = async () => {
-  const url = './FishEyeData.json'
+  const url = 'https://mayccos.github.io/Beckerjeanchri.../FishEyeData.json'
   const response = await fetch(url)
   if (response.ok) {
       return response.json()

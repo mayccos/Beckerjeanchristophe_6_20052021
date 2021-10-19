@@ -5,7 +5,7 @@ import {displayTotalLikes} from "/pagePhotographers/totalLikes.js"
 import Modal from "/pagePhotographers/modal.js";
 import {likesTotalLikesVariation} from "/pagePhotographers/likesvariation.js"
 import {displaySelectOptions} from "/pagePhotographers/mediaSelector.js";
-
+import {toSlide, changeSlide, closeLightbox, openLightbox} from "/pagePhotographe/lightbox.js"
  
 
 
@@ -140,7 +140,10 @@ setTimeout(() => {
 	Modal.modalMessageEvents()
     likesTotalLikesVariation()
     displaySelectOptions()
-  
+    toSlide()
+    changeSlide()
+    closeLightbox()
+    openLightbox()
 }, 1000)
 
 
