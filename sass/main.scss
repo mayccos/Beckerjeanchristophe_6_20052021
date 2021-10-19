@@ -173,15 +173,16 @@ $modalColor:  #DB8876;
 
 @media screen and (min-width: 1600px) {
     .homepage{
-        h1{
-            font-size: 3em;
-            margin-top: -65px;
-        }
+        
         .header{
             img{
                 width: 250px;
                 height: 75px;
                
+            }
+            h1{
+            font-size: 4em;
+            margin-top: 50px;
             }
         }
         .header-navigation{
@@ -318,6 +319,9 @@ $modalColor:  #DB8876;
     }
     .photographer{
         margin-left: 0px;
+    }
+    .nomImage{
+        font-size: 0.9em;
     }
 }
 @media screen and(max-width: 500px) {

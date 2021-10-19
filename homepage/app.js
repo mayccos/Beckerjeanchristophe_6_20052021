@@ -17,7 +17,7 @@ import Photographer from './photographer.js'
  * @returns parsed data as Json format
  */
 let parseDataFromJson = async () => {
-  const url = 'https://mayccos.github.io/Beckerjeanchristophe_6_20052021/FishEyeData.json'
+  const url = './FishEyeData.json'
   const response = await fetch(url)
   if (response.ok) {
       return response.json()
@@ -79,7 +79,7 @@ let filterTags = async(data, filter) =>  {
  * @param {string} filter photographer's informations to post on pagePhotographe.html
  * @returns   Media class created in an array
  */
-let MediaByPhotographerId = async(jsonData, id, filter) => {
+let MediaByPhotographerId = async(jsonData, id, /*filter*/) => {
     const data = await jsonData
     const media = data.media
     let mediaArray = []
@@ -89,7 +89,7 @@ let MediaByPhotographerId = async(jsonData, id, filter) => {
             mediaArray.push(new Media( media.title, media ['image']? media.image : media.video, media.likes, media.date, media.altTxt, media.photographerId))
         }
     })
-    sortMediaByFilter(mediaArray, filter)
+    //sortMediaByFilter(mediaArray, filter);
     return mediaArray
 }
 
@@ -99,25 +99,7 @@ let MediaByPhotographerId = async(jsonData, id, filter) => {
  * @param {string} filter option in the select element on photographer's profil page
  * @returns An array of objects sorted by a filter 
  */
-let sortMediaByFilter = (media, filter) => {
-	switch (filter) {
-	case 'likes':
-		return media.sort((a,b) => {
-			return  b[filter] - a[filter]
-		}) 
-	case 'title':
-		return media.sort((a,b) => {
-			if(a[filter] < b[filter]) { return -1 }
-			if(a[filter] > b[filter]) { return 1 }
-			return 0
-		}) 
-	case 'date':
-		return media.sort((a,b) => {
-			return new Date(b[filter]) - new Date(a[filter])
-		}) 
-	default:
-		break
-	}
-}
+
+
 
 export {filterTags, parseDataFromJson, PhotographersData, PhotographersDataById, MediaByPhotographerId}   

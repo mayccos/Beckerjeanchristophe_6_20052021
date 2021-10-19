@@ -35,10 +35,10 @@
                 <div class="filter__dropdown">
                     <label for="OrderBy" class="filter__label">trié par</label>
                     <div class="filter__selection">
-                        <input name="filterMedia" id="OrderBy" class="filter__selector" type="button" value="Populatité" role="button" aria-haspopup="listbox">
+                        <input name="filterMedia" id="OrderBy" class="filter__selector" type="button"  role="button" aria-haspopup="listbox">
                         <span class="filter__selection-arrow"></span>
                         <ul class="filter__selection-menu" role="listbox" aria-labelledby="OrderBy">
-                            <li role="option" class="filter__selection-option" data-value="popularity" id="popularity" tabindex="0" aria-selected="true">Popularité</li>
+                            <li role="option" class="filter__selection-option" onclick="triMedias(this)" data-value="popularity" id="popularity" tabindex="0" aria-selected="true">Popularité</li>
                             <li role="option" class="filter__selection-option" data-value="date" id="date" tabindex="0" aria-selected="false">Date</li>
                             <li role="option" class="filter__selection-option" data-value="title" id="title" tabindex="0" aria-selected="false">Titre</li>
                         </ul>
@@ -243,8 +243,8 @@
         </main>
         
         <script src="pagePhotographers/pagePhotographe.js" type="module"></script>
-        <!--<script src="pagePhotographers/lightbox.js"></script>-->
+        <script src="pagePhotographers/lightbox.js"></script>
         <script src="pagePhotographers/contactValidation.js"></script>
-        <!--<script src="pagePhotographers/mediaSelector.js"></script>-->
+       
     </body>
 </html>

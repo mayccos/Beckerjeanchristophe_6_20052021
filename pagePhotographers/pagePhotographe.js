@@ -5,7 +5,7 @@ import {displayTotalLikes} from "/pagePhotographers/totalLikes.js"
 import Modal from "/pagePhotographers/modal.js";
 import {likesTotalLikesVariation} from "/pagePhotographers/likesvariation.js"
 import {displaySelectOptions} from "/pagePhotographers/mediaSelector.js";
-import {toSlide, changeSlide, closeLightbox, openLightbox} from "/pagePhotographe/lightbox.js"
+
  
 
 
@@ -87,12 +87,17 @@ function displayPhotographers(photographers) {
 let media="";
 const medias = MediaByPhotographerId(parseDataFromJson(), paramId)
  // console.log(medias);
-displayMedias(medias); 
+displayMedias(medias, ""); 
 
-function displayMedias(medias) {
+function displayMedias(medias, filtre) {
     
     medias.then(result => {
         media = result;
+        if (filtre != "") {
+            gallery.innerHTML = "";
+            media = sortMediaByFilter(media, filtre);
+        }
+        
         media.forEach((media,index) => {
            let sMedia = new Media (
               media.title,
@@ -127,7 +132,35 @@ function displayMedias(medias) {
     })
     
 }
+let sortMediaByFilter = (media, filter) => {
 
+	switch (filter) {
+	case 'likes':
+		return media.sort((a,b) => {
+			return  b[filter] - a[filter]
+		}) 
+	case 'title':
+		return media.sort((a,b) => {
+			if(a[filter] < b[filter]) { return -1 }
+			if(a[filter] > b[filter]) { return 1 }
+			return 0
+		}) 
+	case 'date':
+		return media.sort((a,b) => {
+			return new Date(b[filter]) - new Date(a[filter])
+		}) 
+	default:
+		break
+	}
+}
+function triMedias(element) {
+    console.log(element.innerText);
+    if (element.innerText == 'Popularité') {
+        displayMedias(medias, 'likes');
+    }
+    
+} 
+window.triMedias = triMedias;
 /**
  * display total number of photographer's likes next to remuneration
  * @return HTML element on profil page
@@ -140,10 +173,7 @@ setTimeout(() => {
 	Modal.modalMessageEvents()
     likesTotalLikesVariation()
     displaySelectOptions()
-    toSlide()
-    changeSlide()
-    closeLightbox()
-    openLightbox()
+    
 }, 1000)
 
 
