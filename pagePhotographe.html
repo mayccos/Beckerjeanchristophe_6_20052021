@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -13,8 +13,8 @@
     </head>
     <body class="pagePhotographe">
         <div class="header" role="banner" id="header">
-            <a  href="homepage.html" class="header-svg" aria-label="FishEye home page">
-                <img src="icones/logo.svg" alt=""/>
+            <a  href="homepage.html" class="header-svg" aria-label="FishEye home page" title="logo fish eye">
+                <img src="icones/logo.svg" alt="click ou press enter renvoie à la page d'accueil"/>
             </a>
         </div>
         
@@ -35,12 +35,12 @@
                 <div class="filter__dropdown">
                     <label for="OrderBy" class="filter__label">trié par</label>
                     <div class="filter__selection">
-                        <input name="filterMedia" id="OrderBy" class="filter__selector" type="button"  role="button" aria-haspopup="listbox">
+                        <input name="filterMedia" id="OrderBy" class="filter__selector" type="button" value="Popularité"  role="button" aria-haspopup="listbox">
                         <span class="filter__selection-arrow"></span>
                         <ul class="filter__selection-menu" role="listbox" aria-labelledby="OrderBy">
-                            <li role="option" class="filter__selection-option" onclick="triMedias(this)" data-value="popularity" id="popularity" tabindex="0" aria-selected="true">Popularité</li>
-                            <li role="option" class="filter__selection-option" data-value="date" id="date" tabindex="0" aria-selected="false">Date</li>
-                            <li role="option" class="filter__selection-option" data-value="title" id="title" tabindex="0" aria-selected="false">Titre</li>
+                            <li role="option" class="filter__selection-option" onclick="triMedias(this);swapOption(this)" onkeypress="triMedias(this)" data-value="popularity" id="popularity" tabindex="0" >Popularité</li>
+                            <li role="option" class="filter__selection-option" onclick="triMedias(this);swapOption(this)" onkeypress="triMedias(this)" data-value="date" id="date" tabindex="0" >Date</li>
+                            <li role="option" class="filter__selection-option" onclick="triMedias(this);swapOption(this)" onkeypress="triMedias(this)" data-value="title" id="title" tabindex="0" >Titre</li>
                         </ul>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                 </div>
                 <div class="media" id="photo10">
                     <video src="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.mp4" autobuffer controls poster="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.jpg" onclick="openLightbox();toSlide(10)"></video>
-                    <div class="images-likes"></div>               <!--video poster html sur web   <video src="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.mp4" autobuffer controls poster="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.jpg" ></a>-->
+                    <div class="images-likes"></div>               video poster html sur web   <video src="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.mp4" autobuffer controls poster="images/Sample_Photos/243/Animals_Wild_Horses_in_the_mountains.jpg" ></a>-->
                     <!--    <p class="nomImage">Mimi Keel vidéo</p>
                         <p class="likesNumber">142 <i class="fas fa-heart"aria-label="likes"></i></p>
                     </div>
@@ -121,7 +121,7 @@
                     <div class="lightbox-container">
                         <span class="lightbox-container__close" onclick="closeLightbox()" aria-label="fermer">&times;</span>
                         <a class="lightbox-container__next" onclick="changeSlide(1)" aria-label="suivant">&#10095;</a>
-                        <a class="lightbox-container__preview" onclick="changeSlide(-1)" aria-label="précédent">&#10094</a>
+                        <a class="lightbox-container__preview" onclick="changeSlide(-1)" aria-label="précédent">&#10094;</a>
                         <div class="lightbox-container__media"></div>
                         <!-- <div class="lightbox-container__media">
                             <img src="images/Sample_Photos/243/Animals_Rainbow.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
@@ -165,7 +165,7 @@
             </div>
             <div class="likesTotals_remuneration">
                 <div class="likesTotals"></div>
-                <i class="fas fa-heart"aria-label="likes"></i>
+                <em class="fas fa-heart" aria-label="likes"></em>
                 
                 <!--<p class="remuneration">300€/ jour</p>-->
             </div>

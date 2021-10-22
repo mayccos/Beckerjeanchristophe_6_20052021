@@ -1,0 +1,129 @@
+
+/*css homepage*/
+.homepage{
+    text-decoration: none;
+    background-color: $quaternaryColor;
+    ul{
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    li{
+        
+        height: 22px;
+        border-radius: 15px;
+        border: 1px solid $color5; 
+        box-sizing: border-box;
+        &:focus , &:hover {
+            background-color: $primaryColor;
+            
+        } 
+        
+    }
+    
+
+    /*mise en place du titre et du header*/
+    
+    .header-navigation a , .tags{
+        color: $primaryColor;
+        text-decoration: none;
+        font-weight: bold;
+        font-style: normal;
+        margin: 10px;
+        &:focus , &:hover{
+            color: $quaternaryColor;
+            background-color: $primaryColor;
+        }
+    }
+    
+    .header{
+        margin-top: -20px;
+        display: grid;
+        grid-template-columns: 20% 50% 25%;
+        gap: 0;
+        img{
+            width: 200px;
+            height: 50px;
+            margin-left: 100px;
+            margin-top: 40px;
+        }
+        h1{
+            text-decoration: none;
+            text-align: end;
+            color: $primaryColor;
+            font-size: 2rem;
+            margin-right: 80px;
+            grid-column-start: 3;
+            margin-top: 50px;
+                
+            
+        }
+    }
+    .header-navigation {
+        grid-column-start: 2;
+        grid-column-end: 2;
+        width: 100%;
+        margin-top: 40px;
+        line-height: 16px;
+        ul{
+            font-size: 1em;
+            margin-left: 0px;
+            justify-content: space-between;
+        }
+        li{
+            padding-top: 2px;
+        }
+    }
+    
+    
+} 
+    /*mise en place de la liste des photographes*/
+
+.photographers{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-column-gap: 80px;
+    grid-row-gap: 50px;
+    margin-top: 100px;
+    
+    
+}   
+.photographer{
+    a{
+        text-decoration: none;
+    }
+    margin-left: 50px;
+    h2{
+        
+        color: $secondaryColor;
+    }
+    text-align: center;
+    align-items: center;
+    width: 263px;
+    img{
+        object-fit: cover;
+        width: 200px;
+        border-radius: 50%;
+        height: 200px;
+        @include boxShadow;
+    }
+    ul {
+        flex-wrap: nowrap;
+        margin-left: -20px;
+    }
+    li{
+        margin-left: 5px;
+
+    }
+}
+.countryCity{
+    color: $primaryColor;
+}
+.price{
+    color: $tertiaryColor;
+}
+
+.tagline , .tags{
+    font-size: 0.8em;
+}

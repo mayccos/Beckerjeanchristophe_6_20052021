@@ -1,0 +1,283 @@
+/* css page infos photographe*/
+.pagePhotographe{
+    background-color: $quaternaryColor;
+    h1{
+        font-size: 2.5em;
+        color: $secondaryColor;
+        margin-left: 140px;
+    }
+    a{
+        text-decoration: none;
+    }
+    
+    
+    
+    /*mise en place partie header*/
+    
+    .header{
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        align-items: center;
+        img{
+            width: 200px;
+            height: 50px;
+            margin-left: 100px;
+            margin-top: 40px;
+        }
+    }
+}    
+    /*details photographe*/
+    
+        
+        
+
+.photographeInfo{
+    &__content{
+        display: grid;
+        grid-template-columns: 40% 35% 10%;
+          
+        img{
+            right: 10px;
+            object-fit: cover;
+            width: 200px;
+            border-radius: 50%;
+            height: 200px;
+            grid-column-start: 3;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            margin-top: 30px;
+            @include boxShadow;
+        }
+        
+    }
+    
+    &__details{
+        ul{
+            margin-left: 80px;
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap; 
+        }
+    }
+    .Tags{
+        margin-left: 20px;
+        height: 30px;
+        border-radius: 15px;
+        border: 1px solid $color5; 
+        box-sizing: border-box;
+        &:hover, &:focus{
+            background-color: $primaryColor;
+        }
+    }      
+      
+    .countryCity , .tags{
+    font-size: 1.5em;
+    }
+    .tagline{
+    font-size: 1.2em;
+    color: $tertiaryColor;
+    margin-left: 140px;
+    }
+    .countryCity{
+            margin-left: 140px;
+    }
+    .tags{
+        font-size: 1.2em;
+        color: $primaryColor;
+        margin: 10px;
+        align-items: center;
+        padding-bottom: 10px ;
+        &:focus, &:hover{
+            color: $quaternaryColor;
+            background-color: $primaryColor;
+        }
+    }
+}
+.modal-btn{
+        
+        font-size: 1.2em;
+        font-weight: bold;
+        border-radius: 5px;
+        width: 170px;
+        height: 69px;
+        background-color: $primaryColor;
+        color: $quaternaryColor;
+        margin-top: 20px;
+        grid-column-start: 2;
+        border: 1px solid $primaryColor;
+        &:hover, &:focus{
+            color: #000000;
+            background-color: $modalColor;
+            border: 1px solid $modalColor;
+        }
+}
+/*menu filtre*/
+    
+.filter{
+    margin-top: 50px;
+    
+    margin-left: 100px;
+    &__selector {
+        background: $primaryColor;
+        color: $quaternaryColor;
+        border-radius: 5px;
+        width: 180px;
+        height: 69px;
+        font-size: 1.25em;
+        font-family: inherit;
+        letter-spacing: 1px;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        text-align: left;
+        padding-left: 20px;
+        margin-left: 30px;
+        z-index: 13;
+    }
+    &__dropdown{
+        display: flex;
+        align-items: center;
+       
+    }
+    &__label{
+        font-size: 1.25em;
+        font-weight: bold;
+
+    }
+    &__selection {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    &__selection-arrow {
+        z-index: 13;
+        transition: transform 300ms;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 1px;
+        right: 1px;
+        border-radius: 5px;
+        height: 95%;
+        width: 40px;
+        cursor: pointer;
+        margin: auto;
+        &::before {
+            content: url('../../icones/selection-arrow.svg');
+        }
+        
+    }
+    &__selection-menu {
+        position: absolute;
+        top: -20px;
+        z-index: 12;
+        background: $primaryColor;
+        color: $quaternaryColor;
+        width: 77%;
+        font-size: 1.25em;
+        font-weight: bold;
+        padding: 0 10px;
+        border-radius: 5px ;
+        display: none;
+        letter-spacing: 1px;
+        @include boxShadow;
+        list-style-type: none;
+        margin-left: 30px;
+        
+    }
+    &__selection-option {
+        padding: 22px 0 18px 10px;
+        border-top: 1px solid $quaternaryColor;
+        cursor: pointer;
+        height: 35px;
+    }
+    
+    &__show {
+        display: block;
+    }
+}
+       
+/*mise place partie liste des photos*/
+.gallery{
+        display: grid;
+        grid-template-columns: 20% 20% 20%;
+        grid-column-gap: 10%;
+        align-items: center;
+        margin-top: 50px;
+        
+} 
+.media{
+        margin-left: 100px;
+        p{
+            color: $primaryColor;
+            font-size: 1.25em;
+        }
+        img{
+            object-fit: cover;
+            width: 350px;
+            height: 300px;
+            border-radius: 5px;
+            @include boxShadow;
+        }
+        &__content{
+            display: flex;
+            justify-content: space-between;
+            width: 350px;
+            font-size: 0.95em;
+        }
+        &__title{
+            color: $primaryColor;
+        }&__likes{
+            justify-content: space-evenly;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            .fas{
+                cursor: pointer;
+                color: $primaryColor;
+            }
+        }
+        &__number{
+            cursor: pointer;
+            right:10px;
+        }
+}
+    
+#photo2{
+        grid-column-start: 2;
+}
+#photo3{
+        grid-column-start: 3;
+}
+
+
+.likesTotals_remuneration{
+        position: sticky;
+        bottom: 5%;
+        left: 95vw;
+        
+        margin-bottom: 50%;
+        padding-top: 20px;
+        font-weight: 700;
+        font-size: 1.5em;
+        background-color: $modalColor;
+        border-radius: 5px;
+        width: 350px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        
+}
+.likesTotals{
+    display: flex;
+    align-items: center;
+    
+}    
+
+
+.remuneration{
+    margin-left: 50px;
+    
+}

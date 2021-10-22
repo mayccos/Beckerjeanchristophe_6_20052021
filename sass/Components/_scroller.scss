@@ -1,0 +1,20 @@
+/*passer au contenu en mode sroller*/
+
+.scroller{
+    text-align: center;
+    margin-top: 10px;
+    line-height: 23px;
+    display: none;
+}
+.passContent{
+    color: #000000;
+    background-color: $modalColor;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-style: normal;
+    align-items: center;
+    text-decoration: none;
+    width: 170px;
+    height: 19px;
+        
+}

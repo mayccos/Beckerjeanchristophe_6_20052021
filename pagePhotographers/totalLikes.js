@@ -9,10 +9,10 @@ let displayTotalLikes = (medias) => {
     medias.then(medias =>{
         let totalLikes = 0;
         medias.map(media => {
-            totalLikes += media.likes
+            totalLikes += media.likes;
         });
         return likesTotals.insertAdjacentHTML('beforeend', `${totalLikes}`);
 
-    })
-}
+    });
+};
 export {displayTotalLikes};

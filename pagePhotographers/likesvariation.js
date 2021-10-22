@@ -1,16 +1,15 @@
 /**
  * variation of likes and total likes on photographer's page(increase or decrease)
  */
-let likesTotalLikesVariation = () => {
-    const mediaLikes = document.querySelectorAll('.media__likes');
+let likesTotalLikesVariation = () => {const mediaLikes = document.querySelectorAll('.media__likes');
     mediaLikes.forEach(like => {
         ['click', 'keyup'].forEach(event => like.addEventListener(event , (e) => {
             let likesTotalsNumber = document.querySelector('.likesTotals');
             if (e.key == 'Enter') {
                 if(!like.classList.contains('media__liked')) {
-                    likesTotalLikesIncrease(likesTotalsNumber, like);
+                    totalLikesLikesIncreased(likesTotalsNumber, like);
                 }else{
-                    likesTotalLikesDecrease(likesTotalsNumber, like);
+                    totalLikesLikesDecreased(likesTotalsNumber, like);
                 }
                 
             }else if (e.type == 'click') {
@@ -19,11 +18,10 @@ let likesTotalLikesVariation = () => {
                 }else{
                     totalLikesLikesDecreased(likesTotalsNumber, like);
                 }
-                 
             }
-        }))
-    })
-}
+        }));
+    });
+};
 
 /**
  * to increase media's likes and photographer's total of likes
@@ -31,21 +29,15 @@ let likesTotalLikesVariation = () => {
  * @param {HTMLElement} like  numberof likes increased
  */
 
- let totalLikesLikesIncreased = (likesTotals, like) => {
-    ++likesTotals.innerText;
-    ++like.children[0].innerText;
-    like.classList.add('media__liked');
- }
+let totalLikesLikesIncreased = (likesTotals, like) => {++likesTotals.innerText;++like.children[0].innerText;like.classList.add('media__liked');
+};
 
- /**
+/**
   * to decrease media's likes and photographer's total of likes
   * @param {HTMLElement} likes totals  total of likes decreased
   * @param {HTMLElement} like  numberof likes decreased
   */
-  let totalLikesLikesDecreased = (likesTotals, like) => {
-    --likesTotals.innerText;
-    --like.children[0].innerText;
-    like.classList.remove('media__liked');
- }
+let totalLikesLikesDecreased = (likesTotals, like) => {--likesTotals.innerText;--like.children[0].innerText;like.classList.remove('media__liked');
+};
 
- export  {likesTotalLikesVariation};
+export  {likesTotalLikesVariation};

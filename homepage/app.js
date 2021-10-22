@@ -1,5 +1,5 @@
-import Media from '../pagePhotographers/media.js'
-import Photographer from './photographer.js'
+import Media from '../pagePhotographers/media.js';
+import Photographer from './photographer.js';
 /*function editNav() {
     var x = document.getElementById("header");
     if (x.className === "header") {
@@ -17,14 +17,12 @@ import Photographer from './photographer.js'
  * @returns parsed data as Json format
  */
 let parseDataFromJson = async () => {
-  const url = './FishEyeData.json'
-  const response = await fetch(url)
-  if (response.ok) {
-      return response.json()
-  }else{
-      console.error(response.status)
-  }
-}
+    const url = './FishEyeData.json';
+    const response = await fetch(url);
+    if (response.ok) {
+        return response.json();
+    }else{ console.error(response.status);}
+};
 
 /**
  * function pending  parsed Data as Json Format from url
@@ -33,14 +31,14 @@ let parseDataFromJson = async () => {
  * @returns   Photographer class created in an array
  */
 let PhotographersData = async(jsonData) => {
-  const data = await jsonData
-  const photographers = data.photographers
-  let photographersArray = []
-  photographers.map(data => {
-      photographersArray.push(new Photographer(data.name, data.city, data.country, data.tags, data.tagline, data.price, data.portrait, data.id))
-  })
-  return photographersArray
-}
+    const data = await jsonData;
+    const photographers = data.photographers;
+    let photographersArray = [];
+    photographers.map(data => {
+        photographersArray.push(new Photographer(data.name, data.city, data.country, data.tags, data.tagline, data.price, data.portrait, data.id));
+    });
+    return photographersArray;
+};  
 
 /**
  * function pending  parsed Data as Json Format from url
@@ -49,25 +47,25 @@ let PhotographersData = async(jsonData) => {
  * @param {number} id  Photographer'id from URL's parameter
  * @returns   Photographer class created in an array
  */
- let PhotographersDataById = async(jsonData, id) => {
-  const data = await jsonData
-  const photographers = data.photographers
-  let photographerArray = []
-  photographers.map(data => {
-  //if Id in URL's parameter = photographer's Id => creation a photographer's instance
-      if(id == data.id)  
-          photographerArray.push(new Photographer(data.name, data.city, data.country, data.tags, data.tagline, data.price, data.portrait, data.id))
-  })
-  return photographerArray
-}
+let PhotographersDataById = async(jsonData, id) => {
+    const data = await jsonData;
+    const photographers = data.photographers;
+    let photographerArray = [];
+    photographers.map(data => {
+    //if Id in URL's parameter = photographer's Id => creation a photographer's instance
+        if(id == data.id)  
+            photographerArray.push(new Photographer(data.name, data.city, data.country, data.tags, data.tagline, data.price, data.portrait, data.id));
+    });
+    return photographerArray;
+};
 let filterTags = async(data, filter) =>  {
-  console.log(data);
-  return data.filter(function (el) {
-    return el.tags.indexOf(filter)!== -1;
+    console.log(data);
+    return data.filter(function (el) {
+        return el.tags.indexOf(filter)!== -1;
     
-  });
+    });
       
-}
+};
 
 
 
@@ -80,18 +78,18 @@ let filterTags = async(data, filter) =>  {
  * @returns   Media class created in an array
  */
 let MediaByPhotographerId = async(jsonData, id, /*filter*/) => {
-    const data = await jsonData
-    const media = data.media
-    let mediaArray = []
+    const data = await jsonData;
+    const media = data.media;
+    let mediaArray = [];
     media.map(media => {
         //if Id in URL's parameter = media's id => creation a media's instance
         if (id == media.photographerId) {
-            mediaArray.push(new Media( media.title, media ['image']? media.image : media.video, media.likes, media.date, media.altTxt, media.photographerId))
+            mediaArray.push(new Media( media.title, media ['image']? media.image : media.video, media.likes, media.date, media.altTxt, media.photographerId));
         }
-    })
+    });
     //sortMediaByFilter(mediaArray, filter);
-    return mediaArray
-}
+    return mediaArray;
+};
 
 /**
  * Sorts an array according to the filter passed in parameter
@@ -102,4 +100,4 @@ let MediaByPhotographerId = async(jsonData, id, /*filter*/) => {
 
 
 
-export {filterTags, parseDataFromJson, PhotographersData, PhotographersDataById, MediaByPhotographerId}   
+export {filterTags, parseDataFromJson, PhotographersData, PhotographersDataById, MediaByPhotographerId};  

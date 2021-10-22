@@ -1,0 +1,124 @@
+/*css modal*/
+.contactPhotographe{
+    display: none;
+    position: fixed;
+    z-index: 14;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: #C4C4C466;
+    h1{
+        color: #000000;
+        font-size: 4em;
+        margin-left: 5%;
+        margin-top: 0;
+    }
+}
+.content {
+    
+    margin: 2% auto;
+    width: 100%;
+    max-width: 669px;
+    animation-name: modalOpen;
+    animation-duration: var(--modal-duration);
+    background: $modalColor;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    padding-top: 10px;
+    height: 950px;
+    display: flex;
+    flex-direction: column;
+}
+.close {
+
+position: absolute;
+right: 15px;
+top: 15px;
+width: 42px;
+height: 42px;
+opacity: 1;
+cursor: pointer;
+transform: scale(0.7);
+&:before, &:after{
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 33px;
+    width: 3px;
+    background-color: #fff;
+}
+&:before{
+    transform: rotate(45deg);
+}
+&:after{
+    transform: rotate(-45deg);
+}
+}
+
+.formData{
+label {
+    font-family: var(--font-default);
+    font-size: 2.25em;
+    font-weight: normal;
+    display: inline-block;
+    margin-bottom: 11px;
+    color: $tertiaryColor;
+    margin-left: 5%;
+}
+input {
+    padding: 8px;
+    border: 0.8px solid $quaternaryColor;
+    outline: none;
+    
+}
+}    
+.text-control {
+    margin: 0;
+    padding: 8px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 5px;
+    font-size: 2em;
+    height: 68px;
+    margin-left: 5%;
+}
+#message{
+    height: 170px;
+}
+.formData[data-error]::after {
+content: attr(data-error);
+font-size: 0.4em;
+color: $primaryColor;
+display: block;
+margin-top: 7px;
+margin-bottom: 7px;
+text-align: right;
+line-height: 0.3;
+opacity: 0;
+transition: 0.3s;
+}
+.formData[data-error-visible="true"]::after {
+opacity: 1;
+}
+.formData[data-error-visible="true"] .text-control {
+border: 2px solid $primaryColor;
+}
+#submit{
+    border-radius: 5px;
+    width: 170px;
+    height: 69px;
+    background-color: $primaryColor;
+    color: $quaternaryColor;
+    border: 1px solid $primaryColor;
+    margin-left: 5%;
+    font-size: 1.2em;
+    &:hover, &:focus{
+        color: #000000;
+        background-color: $secondaryColor;
+        border: 1px solid $secondaryColor;
+    }
+}

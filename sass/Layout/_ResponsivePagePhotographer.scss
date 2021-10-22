@@ -1,0 +1,184 @@
+//adaptation of screen  photographer's page
+@media screen and(max-width: 1360px) {
+    .pagePhotographe{
+        .photographeInfo__content{
+            grid-template-columns: 55% 20% 10%;
+        }
+    }
+    .photographeInfo__content{
+        margin-left: -30px;
+    }
+}
+@media screen and (max-width: 1200px){
+    .media{
+        img{
+            object-fit: cover;
+            width: 300px;
+            height: 250px;
+        }
+        &__content{
+        
+        width: 300px;
+        }
+    }
+    .media-slide{
+        max-width: 750px;
+        left: 50px;
+    }
+    .lightbox-container{
+    margin-left: -20px;
+    }   
+}
+@media screen and (max-width: 1024px) {
+    .gallery{
+        grid-template-columns: 37.5% 37.5%;
+        column-gap: 10%;
+    }
+    .media-slide{
+        margin-top: 10%;
+        max-width: 550px;
+        max-height: 458px;
+    }
+    .lightbox-container{
+        margin-left: -20px;
+        &__close{
+            top: 10%;
+        
+        }
+    }
+}
+@media screen and(max-width: 768px) {
+    .pagePhotographe{
+        .header-svg, .photographeInfo{
+            margin-left: -80px;
+        }
+        .photographeInfo__content{
+            width: 100%;
+            grid-template-columns: 85% 15%;
+            
+            margin-left: -50px;
+                
+                
+            
+            h1{
+                font-size: 2em;
+                margin-left: 150px;
+                
+            }
+            img{
+                width: 100px;
+                height: 100px;
+                grid-column-start: 2;
+                margin-left: 20%;
+            }
+            .modal-btn{
+                margin-top:  400px;
+                position: fixed;
+                margin-left: 50%;
+                height: 35px;
+                
+            }
+            .countryCity, .tagline{
+                margin-left: 150px;
+                font-size: 0.8em;
+                
+            }
+            ul{
+                font-size: 0.8em;
+                display: flex;
+                
+            }
+            
+            
+        }
+    }
+    .gallery{
+        grid-template-columns: 100%;
+        gap: 20px 20px;
+        
+    }
+    .media{
+        margin-left: 10px;
+        width: 100%;
+        img, &__content{
+            width: 95%;
+            max-width: 350px;
+            
+
+        }
+        
+    }
+    .media-slide{
+        margin-top: 20%;
+        max-width: 400px;
+        max-height: 334px;
+    }
+    .lightbox-container{
+        margin-left: -30px;
+        &__close , &__next , &__preview{
+            font-size: 35px;
+        }
+        &__next{
+            right: -40px;
+        }
+        &__preview{
+            left: -40px;
+        }
+        &__close{
+            top: 15%;
+        }
+    }
+    
+    
+    .likesTotals_remuneration, .filter{
+        display: none;
+    }
+    .contactPhotographe{
+        width: 97%;
+        label{
+            font-size: 2em;
+        }
+
+    }
+    
+    .nameInTitle h1, .formData label, .text-control{
+        margin-left: 1%;
+        
+    }
+    .error{
+        margin-left: 0;
+    }
+    .text-control{
+        width: 90%;
+    }
+    #submit{
+        height: 35px;
+        margin-left: 35%;
+    }
+}
+@media screen and(max-width: 514px) {
+    .pagePhotographe{
+        .photographeInfo__content{
+            ul{
+               flex-wrap: nowrap;
+               margin-top: 40px;
+            }
+            .modal-btn{
+            margin-left: 60%;
+            }
+        }
+        .h1Contact{
+            font-size: 2.5em;
+        }
+    }
+    .lightbox-container{
+        margin-top: 25%;
+    }
+    .media-slide{
+        max-width: 300px;
+        max-height: 250px;
+        
+    }    
+        
+    
+}    
