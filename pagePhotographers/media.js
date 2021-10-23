@@ -28,12 +28,12 @@ export default class Media{
         let poster = this.nameMedia.slice(0, -4) +'.jpg';
         return`
             
-            <img src="images/Sample_Photos/${this.photographerId}/${poster}" onclick="openLightbox();toSlide(${positionMedia})" alt="${this.altTxt}">
+            <img src="images/Sample_Photos/${this.photographerId}/${poster}" tabIndex="0" onclick="openLightbox();toSlide(${positionMedia})" onkeypress="openLightbox();toSlide(${positionMedia})" alt="${this.altTxt}">
             <div class="media__content">    
                <h2 class="media__title">${this.title}</h2>
-               <div class="media__likes">
+               <div class="media__likes" tabIndex="0" >
                    <p class="media__number">${this.likes}</p> 
-                   <em class="fas fa-heart"  aria-label="likes"></em>
+                   <em class="fas fa-heart" title="touche entrée pour like" aria-label="likes"></em>
                 </div>
             </div>
             `;
@@ -63,5 +63,6 @@ export default class Media{
         }
             
     }
+    
 
 }

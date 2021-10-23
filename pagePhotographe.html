@@ -13,7 +13,7 @@
     </head>
     <body class="pagePhotographe">
         <div class="header" role="banner" id="header">
-            <a  href="homepage.html" class="header-svg" aria-label="FishEye home page" title="logo fish eye">
+            <a  href="index.html" class="header-svg" aria-label="FishEye home page" title="logo fish eye">
                 <img src="icones/logo.svg" alt="click ou press enter renvoie à la page d'accueil"/>
             </a>
         </div>
@@ -119,13 +119,13 @@
                 <div class="lightbox" id="lightbox">
                     
                     <div class="lightbox-container">
-                        <span class="lightbox-container__close" onclick="closeLightbox()" aria-label="fermer">&times;</span>
-                        <a class="lightbox-container__next" onclick="changeSlide(1)" aria-label="suivant">&#10095;</a>
-                        <a class="lightbox-container__preview" onclick="changeSlide(-1)" aria-label="précédent">&#10094;</a>
-                        <div class="lightbox-container__media"></div>
+                        <a class="lightbox-container__close" onclick="closeLightbox()" onkeypress="closeLightbox()" tabindex="0" aria-label="fermer">&times;</a>
+                        <a class="lightbox-container__next" onclick="changeSlide(1)" onkeypress="changeSlide(1)" tabindex="0" aria-label="suivant">&#10095;</a>
+                        <a class="lightbox-container__preview" onclick="changeSlide(-1)" onkeypress="changeSlide(-1)" tabindex="0" aria-label="précédent">&#10094;</a>
+                        <div class="lightbox-container__media" id="media1"><img src="/icones/logoInBox.svg" class="media-slide" alt="" aria-labelledby="Logo FishEye">
+                            <p class="nomImage">FishEye</p></div>
                         <!-- <div class="lightbox-container__media">
-                            <img src="images/Sample_Photos/243/Animals_Rainbow.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
-                            <p class="nomImage">Rainbow Bird</p>
+                            
                         </div>
                         <div class="lightbox-container__media" >
                             <img src="images/Sample_Photos/243/Travel_Lonesome.jpg" class="media-slide" alt="" aria-labelledby="Rainbow Bird">
@@ -220,12 +220,11 @@
                                 <textarea
                                   cols="30"
                                   rows="10" 
-                                  type="message"
                                   class="text-control"
                                   id="message"
                                   name="message"
                                   aria-label="message"
-                                /></textarea><br>
+                                ></textarea><br>
                                 <div class="error" id="messageError"></div><br>
                             </div>    
                             
@@ -234,17 +233,13 @@
                               class="button btn-submit"
                               type="submit"
                               value="Envoyer"
-                              onsubmit="console.log()"
+                              
                             />
                         </form>
                     </div>
                 </div>
             </div>
         </main>
-        
         <script src="pagePhotographers/pagePhotographe.js" type="module"></script>
-        <script src="pagePhotographers/lightbox.js"></script>
-        <script src="pagePhotographers/contactValidation.js"></script>
-       
     </body>
 </html>

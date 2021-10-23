@@ -5,7 +5,8 @@ import {displayTotalLikes} from '/pagePhotographers/totalLikes.js';
 import Modal from '/pagePhotographers/modal.js';
 import {likesTotalLikesVariation} from '/pagePhotographers/likesvariation.js';
 import {displaySelectOptions , choiceSelectOption} from '/pagePhotographers/mediaSelector.js';
-
+import  {changeSlide , closeLightbox }  from '/pagePhotographers/lightbox.js';
+import { validationContact } from '/pagePhotographers/contactValidation.js';
  
 
 
@@ -142,10 +143,13 @@ function displayMedias(medias, filtre) {
             const div2 = document.createElement('div');
             div2.classList.add('lightbox-container__media');
             let mediaLightbox = sMedia.lightboxCreation();
-           
             div2.innerHTML = mediaLightbox;
             lightboxContainer.appendChild(div2);
-           
+
+            /*const div3 = document.getElementById('media1');
+            let photographerInBox = sMedia.photographerInLightbox();
+            div3.innerHTML = photographerInBox;
+            //document.getElementById('media1').appendChild(div3);*/
         });
     });
 }
@@ -180,16 +184,15 @@ function triMedias(element) {
     }else if(element.innerText == 'Titre') {
         displayMedias(medias, 'title');
     }
-    
 } 
 window.triMedias = triMedias;
 /**
  * switch option in selector
  */
+
+
 function swapOption(elem){
     elem.parentNode.insertBefore(elem,elem.parentNode.firstChild);
-    
-    
 }
 window.swapOption = swapOption;
 /**
@@ -199,12 +202,33 @@ window.swapOption = swapOption;
 displayTotalLikes(MediaByPhotographerId(parseDataFromJson(), paramId));
 // function called at form submit event
 
+function sendMessage() {
+    document.querySelector('.btn-submit').addEventListener(['click', 'keypress'], () => {
+        validationContact();
+    });
+}
+
+function lightboxInit() {
+    document.querySelector('.lightbox-container__close').addEventListener(['click', 'keypress'] , () => {
+        closeLightbox();
+    });
+    document.querySelector('.lightbox-container__preview').addEventListener(['click', 'keypress'] , () => {
+        changeSlide(-1);
+    });
+    document.querySelector('.lightbox-container__next').addEventListener(['click', 'keypress'] , () => {
+        changeSlide(1);
+    });
+}
+//window.lightboxInit = lightboxInit;
+
 
 setTimeout(() => {
     Modal.modalMessageEvents();
     likesTotalLikesVariation();
     displaySelectOptions();
     choiceSelectOption();
+    sendMessage();
+    lightboxInit();
 }, 1000);
 
 

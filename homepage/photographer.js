@@ -42,7 +42,7 @@ export default class Photographer {
     photographersCardsTags () {
         let liTags ='';
         for (let i = 0; i < this.tags.length; i++) {
-            liTags += `<li class="Tags"><a  onclick="displayPhotographersByTags(this)" class="tags">#${this.tags[i]}</a></li>`;
+            liTags += `<li class="Tags" ><a tabIndex="0" onclick="displayPhotographersByTags(this)" onkeypress="displayPhotographersByTags(this)" class="tags">#${this.tags[i]}</a></li>`;
             
         }
         return liTags;
@@ -91,7 +91,7 @@ export default class Photographer {
                 <ul class="photographerInfoTags">`+ this.photographerInfoTags() +`</ul>
             </div>
             <button class="modal-btn">Contactez-moi</button>
-            <img  class="portrait" src="images/Sample_Photos/Photographers_ID_Photos/${this.portrait}" alt="${this.name}">
+            <img  class="portrait" src="images/Sample_Photos/Photographers_ID_Photos/${this.portrait}" tabIndex="0" title="portrait ${this.name}" alt="${this.name}">
          `;
     }
 

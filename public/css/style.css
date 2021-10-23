@@ -324,7 +324,7 @@
 }
 .pagePhotographe .header {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 33% 33% auto;
   align-items: center;
 }
 .pagePhotographe .header img {
@@ -505,6 +505,7 @@
   font-size: 1.25em;
 }
 .media img {
+  cursor: pointer;
   object-fit: cover;
   width: 350px;
   height: 300px;
@@ -648,6 +649,10 @@
 
 #video {
   width: 105vh;
+}
+
+#media1 {
+  visibility: hidden;
 }
 
 /*css modal*/

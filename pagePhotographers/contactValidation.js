@@ -115,3 +115,4 @@ function validationContact(e){
 // listening submit event on form element so function validate is run
 form.addEventListener('submit', validationContact);
 
+export {validationContact};

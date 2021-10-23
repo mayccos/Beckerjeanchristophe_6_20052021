@@ -47,7 +47,10 @@ function showSlide(n) {
     /*for (let i = 0; i < modalPreviews.length; i++) {
     modalPreviews[i].className = modalPreviews[i].className.replace(' active', '');
     };*/
-  
+    
     slides[slideIndex - 1].style.display = 'block';
     //modalPreviews[slideIndex - 1].className += ' active';
 }
+
+
+export {toSlide, changeSlide , closeLightbox, openLightbox};

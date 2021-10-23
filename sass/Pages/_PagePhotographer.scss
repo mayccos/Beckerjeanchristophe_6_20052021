@@ -16,7 +16,7 @@
     
     .header{
         display: grid;
-        grid-template-columns: 33% 33% 33%;
+        grid-template-columns: 33% 33% auto;
         align-items: center;
         img{
             width: 200px;
@@ -214,6 +214,7 @@
             font-size: 1.25em;
         }
         img{
+            cursor: pointer;
             object-fit: cover;
             width: 350px;
             height: 300px;
