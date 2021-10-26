@@ -41,7 +41,7 @@ const displaySelectOptions = () => {
 let choiceSelectOption = () => {
     let selectOption = document.querySelectorAll('.filter__selection-option');
     selectOption.forEach(option => {
-        option.addEventListener('click', () => {
+        option.addEventListener('click' , () => {
             if(option.id == 'popularity') {
                 document.querySelector('.filter__selector').value = 'Popularité';
 			

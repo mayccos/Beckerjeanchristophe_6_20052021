@@ -132,14 +132,14 @@ function displayMedias(medias, filtre) {
              * and  medias in lightbox
              * @returns HTML elements on same page
              */
-           
+            console.log('gallery');
             const div = document.createElement('div');
             div.classList.add('media');
             let mediaGallery = sMedia.mediaCreation(index + 2);//position media in lightbox
             div.innerHTML = mediaGallery;
             gallery.appendChild(div);
            
-           
+            console.log('lightbox');
             const div2 = document.createElement('div');
             div2.classList.add('lightbox-container__media');
             let mediaLightbox = sMedia.lightboxCreation();
@@ -189,12 +189,12 @@ window.triMedias = triMedias;
 /**
  * switch option in selector
  */
-
-
 function swapOption(elem){
     elem.parentNode.insertBefore(elem,elem.parentNode.firstChild);
 }
 window.swapOption = swapOption;
+//document.querySelectorAll('.filter__selection-option').addEventListener(['click' , 'keypress'] , swapOption());
+
 /**
  * display total number of photographer's likes next to remuneration
  * @return HTML element on profil page
@@ -209,7 +209,7 @@ function sendMessage() {
 }
 
 function lightboxInit() {
-    document.querySelector('.lightbox-container__close').addEventListener(['click', 'keypress'] , () => {
+    document.querySelector('.lightbox-container__close').addEventListener(['click', 'keypress', ] , () => {
         closeLightbox();
     });
     document.querySelector('.lightbox-container__preview').addEventListener(['click', 'keypress'] , () => {

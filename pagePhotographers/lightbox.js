@@ -1,6 +1,6 @@
 // Initialize here and run showSlide() to give  lightbox a default state.
 
-let slideIndex = 1;
+let slideIndex = 0;
 showSlide(slideIndex);
 
 /**
