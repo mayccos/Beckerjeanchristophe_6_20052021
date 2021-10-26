@@ -91,12 +91,6 @@ let MediaByPhotographerId = async(jsonData, id, /*filter*/) => {
     return mediaArray;
 };
 
-/**
- * Sorts an array according to the filter passed in parameter
- * @param {object[]} media Array of instantiations of the media class
- * @param {string} filter option in the select element on photographer's profil page
- * @returns An array of objects sorted by a filter 
- */
 
 
 
