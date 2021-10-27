@@ -209,13 +209,16 @@ function sendMessage() {
 }
 
 function lightboxInit() {
-    document.querySelector('.lightbox-container__close').addEventListener(['click', 'keypress', ] , () => {
+   
+    document.querySelector('.lightbox-container__close').addEventListener('click', () => {
         closeLightbox();
     });
-    document.querySelector('.lightbox-container__preview').addEventListener(['click', 'keypress'] , () => {
+    
+    document.querySelector('.lightbox-container__preview').addEventListener('click', () => {
         changeSlide(-1);
     });
-    document.querySelector('.lightbox-container__next').addEventListener(['click', 'keypress'] , () => {
+    
+    document.querySelector('.lightbox-container__next').addEventListener('click', () => {
         changeSlide(1);
     });
 }
