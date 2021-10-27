@@ -116,7 +116,7 @@ function displayMedias(medias, filtre) {
         if (filtre != '') {
             gallery.innerHTML = '';
             media = sortMediaByFilter(media, filtre);
-        }
+        }console.log('lightbox');
         
         media.forEach((media,index) => {
             let sMedia = new Media (
@@ -132,14 +132,14 @@ function displayMedias(medias, filtre) {
              * and  medias in lightbox
              * @returns HTML elements on same page
              */
-            console.log('gallery');
+            //console.log('gallery');
             const div = document.createElement('div');
             div.classList.add('media');
             let mediaGallery = sMedia.mediaCreation(index + 2);//position media in lightbox
             div.innerHTML = mediaGallery;
             gallery.appendChild(div);
            
-            console.log('lightbox');
+            //console.log('lightbox');
             const div2 = document.createElement('div');
             div2.classList.add('lightbox-container__media');
             let mediaLightbox = sMedia.lightboxCreation();
@@ -221,9 +221,12 @@ function lightboxInit() {
     document.querySelector('.lightbox-container__next').addEventListener('click', () => {
         changeSlide(1);
     });
+    document.querySelector('.lightbox').addEventListener(['onkeyup', 'ArrowLeft'] , () => {
+        changeSlide(-1);
+    });
+
 }
 //window.lightboxInit = lightboxInit;
-
 
 setTimeout(() => {
     Modal.modalMessageEvents();
