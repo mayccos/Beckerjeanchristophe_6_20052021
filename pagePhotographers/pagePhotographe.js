@@ -116,7 +116,7 @@ function displayMedias(medias, filtre) {
         if (filtre != '') {
             gallery.innerHTML = '';
             media = sortMediaByFilter(media, filtre);
-        }console.log('lightbox');
+        }console.log(media);
         
         media.forEach((media,index) => {
             let sMedia = new Media (
