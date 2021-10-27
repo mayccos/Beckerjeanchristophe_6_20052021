@@ -1,5 +1,5 @@
-import { parseDataFromJson, PhotographersData, filterTags} from './app.js';
-import Photographer from './photographer.js';
+import { parseDataFromJson, PhotographersData, filterTags} from '/app.js';
+import Photographer from '/photographer.js';
 const DOM = {
     photographersContainer : document.querySelector('.photographers'),
     navigationFilter : document.querySelector('header-navigation__filter')
