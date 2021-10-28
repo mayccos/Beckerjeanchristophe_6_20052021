@@ -1,5 +1,5 @@
-import { parseDataFromJson, PhotographersDataById, MediaByPhotographerId, filterTags} from '../../homepage/app';
-import Photographer from '../../homepage/photographer';
+import { parseDataFromJson, PhotographersDataById, MediaByPhotographerId, filterTags} from '../homepage/app.js';
+import Photographer from '../homepage/photographer.js';
 import Media from './media.js';
 import {displayTotalLikes} from './totalLikes.js';
 import Modal from './modal.js';
