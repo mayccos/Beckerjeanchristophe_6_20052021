@@ -1,12 +1,12 @@
 import { parseDataFromJson, PhotographersDataById, MediaByPhotographerId, filterTags} from '/homepage/app.js';
 import Photographer from '/homepage/photographer.js';
-import Media from '/pagePhotographers/media.js';
-import {displayTotalLikes} from '/pagePhotographers/totalLikes.js';
-import Modal from '/pagePhotographers/modal.js';
-import {likesTotalLikesVariation} from '/pagePhotographers/likesvariation.js';
-import {displaySelectOptions , choiceSelectOption} from '/pagePhotographers/mediaSelector.js';
-import  {changeSlide , closeLightbox }  from '/pagePhotographers/lightbox.js';
-import { validationContact } from '/pagePhotographers/contactValidation.js';
+import Media from './media.js';
+import {displayTotalLikes} from './totalLikes.js';
+import Modal from './modal.js';
+import {likesTotalLikesVariation} from './likesvariation.js';
+import {displaySelectOptions , choiceSelectOption} from './mediaSelector.js';
+import  {changeSlide , closeLightbox }  from './lightbox.js';
+import { validationContact } from './contactValidation.js';
  
 
 
@@ -114,9 +114,11 @@ function displayMedias(medias, filtre) {
     medias.then(result => {
         media = result;
         if (filtre != '') {
-            gallery.innerHTML = '';
+            //gallery.innerHTML = '';
+            document.querySelectorAll('.media').forEach(el => el.remove());
+            document.querySelectorAll('.lightbox-container__media').forEach(el=>{if(el.id!='media1') {el.remove();}});
             media = sortMediaByFilter(media, filtre);
-        }console.log(media);
+        }
         
         media.forEach((media,index) => {
             let sMedia = new Media (
@@ -186,12 +188,13 @@ function triMedias(element) {
     }
 } 
 window.triMedias = triMedias;
+
 /**
  * switch option in selector
  */
 function swapOption(elem){
     elem.parentNode.insertBefore(elem,elem.parentNode.firstChild);
-}
+}console.log('lightbox');
 window.swapOption = swapOption;
 //document.querySelectorAll('.filter__selection-option').addEventListener(['click' , 'keypress'] , swapOption());
 
@@ -210,22 +213,34 @@ function sendMessage() {
 
 function lightboxInit() {
    
-    document.querySelector('.lightbox-container__close').addEventListener('click', () => {
+    document.querySelector('.lightbox-container__close').addEventListener('click' , () => {
         closeLightbox();
     });
-    
-    document.querySelector('.lightbox-container__preview').addEventListener('click', () => {
+    document.querySelector('.lightbox-container__preview').addEventListener('click' , () => {
         changeSlide(-1);
     });
     
-    document.querySelector('.lightbox-container__next').addEventListener('click', () => {
+    document.querySelector('.lightbox-container__next').addEventListener('click' , () => {
         changeSlide(1);
     });
-    document.querySelector('.lightbox').addEventListener(['onkeyup', 'ArrowLeft'] , () => {
-        changeSlide(-1);
-    });
-
+    
 }
+window.addEventListener('keydown', function (e){
+    if(e.keyCode == 37) {
+        e.preventDefault();
+        changeSlide(-1);
+    }
+    else if(e.keyCode == 39) {
+        e.preventDefault();
+        changeSlide(1);
+    }
+    else if(e.keyCode == 27) {
+        closeLightbox();
+    }
+    console.log(e);
+});
+
+
 //window.lightboxInit = lightboxInit;
 
 setTimeout(() => {
